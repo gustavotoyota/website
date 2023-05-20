@@ -1,5 +1,7 @@
 "use client";
 
+import File from "@/components/file";
+import MiniButton from "@/components/mini-button";
 import Tab from "@/components/tab";
 import { useStateEx } from "@/utils";
 import Image from "next/image";
@@ -9,6 +11,13 @@ export default function Home() {
   const [showBanner, setShowBanner] = useState(true);
 
   const [activeAction, setActiveAction] = useState("explorer");
+
+  const files = [
+    "carreira.html",
+    "competencias.html",
+    "fotos.html",
+    "projetos.html",
+  ];
 
   const [tabs, setTabs, getTabs] = useStateEx([
     "Welcome",
@@ -51,7 +60,7 @@ export default function Home() {
         </div>
       ) : null}
 
-      <div className="flex-1 flex">
+      <div className="flex-1 flex select-none">
         {/* Mini buttons */}
 
         <div className="flex-none w-12 border-r border-r-white/10 flex flex-col">
@@ -63,107 +72,41 @@ export default function Home() {
             </svg>
           </div>
 
-          <div
-            className="group w-12 h-12 flex items-center justify-center relative cursor-pointer"
+          <MiniButton
+            icon="files"
+            active={activeAction === "explorer"}
             onClick={() => setActiveAction("explorer")}
-          >
-            <svg
-              className={`w-6 h-6 text-neutral-400 group-hover:text-neutral-200 ${
-                activeAction === "explorer" ? "text-neutral-200" : ""
-              }`}
-            >
-              <use xlinkHref="codicon.svg#files" />
-            </svg>
+          />
 
-            {activeAction === "explorer" ? (
-              <div className="absolute inset-0 border-l-2 border-l-[#0078d4]"></div>
-            ) : null}
-          </div>
-
-          <div
-            className="group w-12 h-12 flex items-center justify-center relative cursor-pointer"
+          <MiniButton
+            icon="search"
+            active={activeAction === "search"}
             onClick={() => setActiveAction("search")}
-          >
-            <svg
-              className={`w-6 h-6 text-neutral-400 group-hover:text-neutral-200 ${
-                activeAction === "search" ? "text-neutral-200" : ""
-              }`}
-            >
-              <use xlinkHref="codicon.svg#search" />
-            </svg>
+          />
 
-            {activeAction === "search" ? (
-              <div className="absolute inset-0 border-l-2 border-l-[#0078d4]"></div>
-            ) : null}
-          </div>
-
-          <div
-            className="group w-12 h-12 flex items-center justify-center relative cursor-pointer"
+          <MiniButton
+            icon="source-control"
+            active={activeAction === "source-control"}
             onClick={() => setActiveAction("source-control")}
-          >
-            <svg
-              className={`w-6 h-6 text-neutral-400 group-hover:text-neutral-200 ${
-                activeAction === "source-control" ? "text-neutral-200" : ""
-              }`}
-            >
-              <use xlinkHref="codicon.svg#source-control" />
-            </svg>
+          />
 
-            {activeAction === "source-control" ? (
-              <div className="absolute inset-0 border-l-2 border-l-[#0078d4]"></div>
-            ) : null}
-          </div>
-
-          <div
-            className="group w-12 h-12 flex items-center justify-center relative cursor-pointer"
+          <MiniButton
+            icon="debug"
+            active={activeAction === "debug"}
             onClick={() => setActiveAction("debug")}
-          >
-            <svg
-              className={`w-6 h-6 text-neutral-400 group-hover:text-neutral-200 ${
-                activeAction === "debug" ? "text-neutral-200" : ""
-              }`}
-            >
-              <use xlinkHref="codicon.svg#debug-alt" />
-            </svg>
+          />
 
-            {activeAction === "debug" ? (
-              <div className="absolute inset-0 border-l-2 border-l-[#0078d4]"></div>
-            ) : null}
-          </div>
-
-          <div
-            className="group w-12 h-12 flex items-center justify-center relative cursor-pointer"
+          <MiniButton
+            icon="extensions"
+            active={activeAction === "extensions"}
             onClick={() => setActiveAction("extensions")}
-          >
-            <svg
-              className={`w-6 h-6 text-neutral-400 group-hover:text-neutral-200 ${
-                activeAction === "extensions" ? "text-neutral-200" : ""
-              }`}
-            >
-              <use xlinkHref="codicon.svg#extensions" />
-            </svg>
+          />
 
-            {activeAction === "extensions" ? (
-              <div className="absolute inset-0 border-l-2 border-l-[#0078d4]"></div>
-            ) : null}
-          </div>
-
-          <div
-            className="group w-12 h-12 flex items-center justify-center relative cursor-pointer"
+          <MiniButton
+            icon="remote-explorer"
+            active={activeAction === "remote-explorer"}
             onClick={() => setActiveAction("remote-explorer")}
-          >
-            <svg
-              className={`w-6 h-6 text-neutral-400 group-hover:text-neutral-200 ${
-                activeAction === "remote-explorer" ? "text-neutral-200" : ""
-              }`}
-            >
-              <use xlinkHref="codicon.svg#remote-explorer" />
-            </svg>
-
-            {activeAction === "remote-explorer" ? (
-              <div className="absolute inset-0 border-l-2 border-l-[#0078d4]"></div>
-            ) : null}
-          </div>
+          />
 
           <div className="flex-1"></div>
 
@@ -216,43 +159,19 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-center h-[22px] cursor-pointer hover:bg-white/10">
-              <svg className="ml-8 w-4 h-4 text-neutral-200">
-                <use xlinkHref="codicon.svg#code" />
-              </svg>
+            {files.map((file) => (
+              <File
+                name={file}
+                key={file}
+                onClick={() => {
+                  if (!tabs.includes(file)) {
+                    setTabs([...tabs, file]);
+                  }
 
-              <div className="ml-1 text-[13px] text-[#cccccc]">
-                carreira.html
-              </div>
-            </div>
-
-            <div className="flex items-center h-[22px] cursor-pointer hover:bg-white/10">
-              <svg className="ml-8 w-4 h-4 text-neutral-200">
-                <use xlinkHref="codicon.svg#code" />
-              </svg>
-
-              <div className="ml-1 text-[13px] text-[#cccccc]">
-                competencias.html
-              </div>
-            </div>
-
-            <div className="flex items-center h-[22px] cursor-pointer hover:bg-white/10">
-              <svg className="ml-8 w-4 h-4 text-neutral-200">
-                <use xlinkHref="codicon.svg#code" />
-              </svg>
-
-              <div className="ml-1 text-[13px] text-[#cccccc]">fotos.html</div>
-            </div>
-
-            <div className="flex items-center h-[22px] cursor-pointer hover:bg-white/10">
-              <svg className="ml-8 w-4 h-4 text-neutral-200">
-                <use xlinkHref="codicon.svg#code" />
-              </svg>
-
-              <div className="ml-1 text-[13px] text-[#cccccc]">
-                projetos.html
-              </div>
-            </div>
+                  setActiveTab(file);
+                }}
+              />
+            ))}
           </div>
 
           <div className="flex-1"></div>
@@ -286,11 +205,7 @@ export default function Home() {
               <Tab
                 name={tab}
                 active={tab === activeTab}
-                onActivate={() => {
-                  setActiveTab(tab);
-
-                  console.log("activate");
-                }}
+                onActivate={() => setActiveTab(tab)}
                 onClose={async () => {
                   setTabs(tabs.filter((t) => t !== tab));
 
