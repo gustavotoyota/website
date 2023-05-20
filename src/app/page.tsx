@@ -191,13 +191,17 @@ export default function Home() {
               name="OUTLINE"
               active={activeItem === "OUTLINE"}
               onClick={() => setActiveItem("OUTLINE")}
-            />
+            >
+              <div className="ml-3 mt-2">Olá.</div>
+            </Section>
 
             <Section
               name="TIMELINE"
               active={activeItem === "TIMELINE"}
               onClick={() => setActiveItem("TIMELINE")}
-            />
+            >
+              <div className="ml-3 mt-2">Tudo bem?</div>
+            </Section>
           </div>
         </div>
 

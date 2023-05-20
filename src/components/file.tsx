@@ -6,7 +6,7 @@ export default function File(props: any) {
       }`}
       onClick={props.onClick}
     >
-      <svg className="ml-8 w-4 h-4 text-neutral-200">
+      <svg className="ml-8 w-4 h-4 text-[#e37933]">
         <use xlinkHref="codicon.svg#code" />
       </svg>
 

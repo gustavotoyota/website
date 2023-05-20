@@ -13,7 +13,7 @@ export default function Tab(props: any) {
       onClick={props.onActivate}
     >
       <div className="ml-2">
-        <svg className="w-4 h-4 text-neutral-200">
+        <svg className="w-4 h-4 text-[#e37933]">
           <use xlinkHref={`codicon.svg#${props.icon ? props.icon : "code"}`} />
         </svg>
       </div>
