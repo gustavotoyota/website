@@ -8,7 +8,9 @@ export default function Tab(props: any) {
         ${props.active ? "" : "border-b border-b-white/10"}
         text-[13px] cursor-pointer
         h-[35px]
-        ${props.active ? "border-t border-t-[#0078d4]" : ""}`}
+        border-t
+        ${props.active ? "border-t-[#0078d4]" : "border-t-transparent"}`}
+      onClick={props.onActivate}
     >
       <div className="ml-2">
         <svg className="w-4 h-4 text-neutral-200">
@@ -25,6 +27,11 @@ export default function Tab(props: any) {
           flex items-center justify-center
           ${props.active ? "" : "invisible group-hover:visible"}
           hover:bg-white/10 cursor-pointer`}
+        onClick={(event) => {
+          event.stopPropagation();
+
+          props.onClose?.(event);
+        }}
       >
         <svg className={`w-4 h-4 ${props.active ? "" : "text-neutral-400"}`}>
           <use xlinkHref="codicon.svg#close" />

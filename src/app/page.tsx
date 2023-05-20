@@ -1,6 +1,7 @@
 "use client";
 
 import Tab from "@/components/tab";
+import { useStateEx } from "@/utils";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -9,12 +10,28 @@ export default function Home() {
 
   const [activeAction, setActiveAction] = useState("explorer");
 
+  const [tabs, setTabs, getTabs] = useStateEx([
+    "Welcome",
+    "carreira.html",
+    "competencias.html",
+    "fotos.html",
+    "projetos.html",
+  ]);
+
+  const [activeTab, setActiveTab] = useState("Welcome");
+
   return (
     <main className="flex min-h-screen flex-col text-white bg-[#181818]">
       {showBanner ? (
         <div className="pl-2 bg-[#323232] flex items-center py-[3px]">
-          <div className="flex-1">
-            Estou à procura de emprego. Caso interessado, entre em contato por{" "}
+          <div>
+            <svg className="w-4 h-4 text-neutral-200">
+              <use xlinkHref="codicon.svg#code" />
+            </svg>
+          </div>
+
+          <div className="ml-1 flex-1">
+            Estou à procura de emprego. Caso interessado, entrar em contato por{" "}
             <a href="mailto:mail@gustavotoyota.dev" className="underline">
               mail@gustavotoyota.dev
             </a>
@@ -233,7 +250,7 @@ export default function Home() {
               </svg>
 
               <div className="ml-1 text-[13px] text-[#cccccc]">
-                projetos-pessoais.html
+                projetos.html
               </div>
             </div>
           </div>
@@ -265,11 +282,23 @@ export default function Home() {
 
         <div className="flex-1 flex flex-col w-0">
           <div className="flex overflow-x-auto">
-            <Tab name="Welcome" active />
-            <Tab name="carreira.html" />
-            <Tab name="competencias.html" />
-            <Tab name="fotos.html" />
-            <Tab name="projetos-pessoais.html" />
+            {tabs.map((tab) => (
+              <Tab
+                name={tab}
+                active={tab === activeTab}
+                onActivate={() => {
+                  setActiveTab(tab);
+
+                  console.log("activate");
+                }}
+                onClose={async () => {
+                  setTabs(tabs.filter((t) => t !== tab));
+
+                  setActiveTab((await getTabs())[0]);
+                }}
+                key={tab}
+              />
+            ))}
 
             {/* Ellipsis */}
 
