@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col text-white bg-[#181818]">
       {showBanner ? (
-        <div className="pl-2 leading-[26px] bg-[#323232] flex">
+        <div className="pl-2 bg-[#323232] flex items-center py-[3px]">
           <div className="flex-1">
             Estou à procura de emprego. Caso interessado, entre em contato por{" "}
             <a href="mailto:mail@gustavotoyota.dev" className="underline">
@@ -166,8 +166,34 @@ export default function Home() {
 
         {/* Main content */}
 
-        <div className="flex-1 flex">
-          <div></div>
+        <div className="flex-1 flex flex-col">
+          <div className="h-[35px] flex">
+            <div className="px-1 flex items-center bg-[#1f1f1f] border-r border-r-white/10 border-t border-t-[#0078d4] text-[13px] cursor-pointer">
+              <div className="italic">Welcome</div>
+
+              <div className="w-2"></div>
+
+              <div className="w-5 h-5 rounded flex items-center justify-center hover:bg-white/10 cursor-pointer">
+                <svg className="w-4 h-4 text-neutral-200">
+                  <use xlinkHref="codicon.svg#close" />
+                </svg>
+              </div>
+            </div>
+
+            <div className="flex-1 border-b border-b-white/10 flex items-center">
+              <div className="flex-1"></div>
+
+              <div className="mr-2">
+                <div className="rounded w-[22px] h-[22px] hover:bg-white/10 cursor-pointer flex items-center justify-center">
+                  <svg className="w-4 h-4 text-neutral-200">
+                    <use xlinkHref="codicon.svg#ellipsis" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex-1 bg-[#1f1f1f]"></div>
         </div>
       </div>
 
