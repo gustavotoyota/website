@@ -2,7 +2,13 @@
 
 import File from "@/components/file";
 import MiniButton from "@/components/mini-button";
+import Section from "@/components/section";
 import Tab from "@/components/tab";
+import CompetenciasTab from "@/components/tabs/competencias";
+import ExperienciaTab from "@/components/tabs/experiencia";
+import GaleriaTab from "@/components/tabs/galeria";
+import ProjetosTab from "@/components/tabs/projetos";
+import WelcomeTab from "@/components/tabs/welcome";
 import { useStateEx } from "@/utils";
 import Image from "next/image";
 import { useState } from "react";
@@ -12,19 +18,21 @@ export default function Home() {
 
   const [activeAction, setActiveAction] = useState("explorer");
 
+  const [activeItem, setActiveItem] = useState<string | null>(null);
+
   const files = [
-    "carreira.html",
-    "competencias.html",
-    "fotos.html",
+    "experiencia.html",
     "projetos.html",
+    "competencias.html",
+    "galeria.html",
   ];
 
   const [tabs, setTabs, getTabs] = useStateEx([
     "Welcome",
-    "carreira.html",
-    "competencias.html",
-    "fotos.html",
+    "experiencia.html",
     "projetos.html",
+    "competencias.html",
+    "galeria.html",
   ]);
 
   const [activeTab, setActiveTab] = useState("Welcome");
@@ -139,61 +147,57 @@ export default function Home() {
           </div>
 
           <div className="flex-1 flex flex-col">
-            <div className="flex items-center h-[22px] cursor-pointer">
-              <svg className="ml-[2px] w-4 h-4 text-neutral-200">
-                <use xlinkHref="codicon.svg#chevron-down" />
-              </svg>
+            <Section
+              name="WORKSPACE"
+              active={activeItem === "WORKSPACE"}
+              onClick={() => setActiveItem("WORKSPACE")}
+              expanded
+            >
+              <div
+                className={`flex items-center h-[22px] cursor-pointer hover:bg-white/10 border ${
+                  activeItem === "Gustavo Toyota"
+                    ? "border-[#0078d4] bg-white/10"
+                    : "border-transparent"
+                }`}
+                onClick={() => setActiveItem("Gustavo Toyota")}
+              >
+                <svg className="ml-4 w-4 h-4 text-neutral-200">
+                  <use xlinkHref="codicon.svg#chevron-down" />
+                </svg>
 
-              <div className="ml-[2px] font-bold text-[11px] text-[#cccccc]">
-                WORKSPACE
+                <div className="ml-[2px] text-[13px] text-[#cccccc]">
+                  Gustavo Toyota
+                </div>
               </div>
-            </div>
 
-            <div className="flex items-center h-[22px] cursor-pointer hover:bg-white/10">
-              <svg className="ml-4 w-4 h-4 text-neutral-200">
-                <use xlinkHref="codicon.svg#chevron-down" />
-              </svg>
+              {files.map((file) => (
+                <File
+                  name={file}
+                  key={file}
+                  active={file === activeItem}
+                  onClick={() => {
+                    if (!tabs.includes(file)) {
+                      setTabs([...tabs, file]);
+                    }
 
-              <div className="ml-[2px] text-[13px] text-[#cccccc]">
-                Gustavo Toyota
-              </div>
-            </div>
+                    setActiveTab(file);
+                    setActiveItem(file);
+                  }}
+                />
+              ))}
+            </Section>
 
-            {files.map((file) => (
-              <File
-                name={file}
-                key={file}
-                onClick={() => {
-                  if (!tabs.includes(file)) {
-                    setTabs([...tabs, file]);
-                  }
+            <Section
+              name="OUTLINE"
+              active={activeItem === "OUTLINE"}
+              onClick={() => setActiveItem("OUTLINE")}
+            />
 
-                  setActiveTab(file);
-                }}
-              />
-            ))}
-          </div>
-
-          <div className="flex-1"></div>
-
-          <div className="flex items-center h-[22px] cursor-pointer border-t border-t-white/10">
-            <svg className="ml-[2px] w-4 h-4 text-neutral-200">
-              <use xlinkHref="codicon.svg#chevron-right" />
-            </svg>
-
-            <div className="ml-[2px] font-bold text-[11px] text-[#cccccc]">
-              OUTLINE
-            </div>
-          </div>
-
-          <div className="flex items-center h-[22px] cursor-pointer border-t border-t-white/10">
-            <svg className="ml-[2px] w-4 h-4 text-neutral-200">
-              <use xlinkHref="codicon.svg#chevron-right" />
-            </svg>
-
-            <div className="ml-[2px] font-bold text-[11px] text-[#cccccc]">
-              TIMELINE
-            </div>
+            <Section
+              name="TIMELINE"
+              active={activeItem === "TIMELINE"}
+              onClick={() => setActiveItem("TIMELINE")}
+            />
           </div>
         </div>
 
@@ -205,6 +209,7 @@ export default function Home() {
               <Tab
                 name={tab}
                 active={tab === activeTab}
+                icon={tab === "Welcome" ? "home" : "code"}
                 onActivate={() => setActiveTab(tab)}
                 onClose={async () => {
                   setTabs(tabs.filter((t) => t !== tab));
@@ -230,7 +235,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-1 bg-[#1f1f1f]"></div>
+          <div className="flex-1 bg-[#1f1f1f]">
+            {activeTab === "Welcome" ? (
+              <WelcomeTab />
+            ) : activeTab === "experiencia.html" ? (
+              <ExperienciaTab />
+            ) : activeTab === "projetos.html" ? (
+              <ProjetosTab />
+            ) : activeTab === "competencias.html" ? (
+              <CompetenciasTab />
+            ) : activeTab === "galeria.html" ? (
+              <GaleriaTab />
+            ) : null}
+          </div>
         </div>
       </div>
 

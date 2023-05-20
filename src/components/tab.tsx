@@ -14,7 +14,7 @@ export default function Tab(props: any) {
     >
       <div className="ml-2">
         <svg className="w-4 h-4 text-neutral-200">
-          <use xlinkHref="codicon.svg#code" />
+          <use xlinkHref={`codicon.svg#${props.icon ? props.icon : "code"}`} />
         </svg>
       </div>
 
