@@ -1,5 +1,6 @@
 "use client";
 
+import Tab from "@/components/tab";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -36,7 +37,7 @@ export default function Home() {
       <div className="flex-1 flex">
         {/* Mini buttons */}
 
-        <div className="flex-none w-12 border-r border-r-white/10">
+        <div className="flex-none w-12 border-r border-r-white/10 flex flex-col">
           <div className="group w-12 h-9 flex items-center justify-center relative cursor-pointer">
             <div className="hidden group-hover:block bg-[#0078d4] left-0 top-0 bottom-0 right-0"></div>
 
@@ -146,13 +147,27 @@ export default function Home() {
               <div className="absolute inset-0 border-l-2 border-l-[#0078d4]"></div>
             ) : null}
           </div>
+
+          <div className="flex-1"></div>
+
+          <div className="group w-12 h-12 flex items-center justify-center relative cursor-pointer">
+            <svg className="w-6 h-6 text-neutral-400 group-hover:text-neutral-200">
+              <use xlinkHref="codicon.svg#account" />
+            </svg>
+          </div>
+
+          <div className="group w-12 h-12 flex items-center justify-center relative cursor-pointer">
+            <svg className="w-[27px] h-[27px] text-neutral-400 group-hover:text-neutral-200">
+              <use xlinkHref="codicon.svg#gear" />
+            </svg>
+          </div>
         </div>
 
         {/* Sidebar */}
 
-        <div className="flex-none w-64 bg-[#181818] border-r border-r-white/10">
+        <div className="flex-none w-64 bg-[#181818] border-r border-r-white/10 flex flex-col">
           <div className="text-[11px] h-[35px] flex items-center">
-            <div className="flex-1 ml-4">EXPLORER</div>
+            <div className="flex-1 ml-5 text-[#cccccc]">EXPLORER</div>
 
             <div className="mr-2">
               <div className="rounded w-[22px] h-[22px] hover:bg-white/10 cursor-pointer flex items-center justify-center">
@@ -162,25 +177,103 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <div className="flex-1 flex flex-col">
+            <div className="flex items-center h-[22px] cursor-pointer">
+              <svg className="ml-[2px] w-4 h-4 text-neutral-200">
+                <use xlinkHref="codicon.svg#chevron-down" />
+              </svg>
+
+              <div className="ml-[2px] font-bold text-[11px] text-[#cccccc]">
+                WORKSPACE
+              </div>
+            </div>
+
+            <div className="flex items-center h-[22px] cursor-pointer hover:bg-white/10">
+              <svg className="ml-4 w-4 h-4 text-neutral-200">
+                <use xlinkHref="codicon.svg#chevron-down" />
+              </svg>
+
+              <div className="ml-[2px] text-[13px] text-[#cccccc]">
+                Gustavo Toyota
+              </div>
+            </div>
+
+            <div className="flex items-center h-[22px] cursor-pointer hover:bg-white/10">
+              <svg className="ml-8 w-4 h-4 text-neutral-200">
+                <use xlinkHref="codicon.svg#code" />
+              </svg>
+
+              <div className="ml-1 text-[13px] text-[#cccccc]">
+                carreira.html
+              </div>
+            </div>
+
+            <div className="flex items-center h-[22px] cursor-pointer hover:bg-white/10">
+              <svg className="ml-8 w-4 h-4 text-neutral-200">
+                <use xlinkHref="codicon.svg#code" />
+              </svg>
+
+              <div className="ml-1 text-[13px] text-[#cccccc]">
+                competencias.html
+              </div>
+            </div>
+
+            <div className="flex items-center h-[22px] cursor-pointer hover:bg-white/10">
+              <svg className="ml-8 w-4 h-4 text-neutral-200">
+                <use xlinkHref="codicon.svg#code" />
+              </svg>
+
+              <div className="ml-1 text-[13px] text-[#cccccc]">fotos.html</div>
+            </div>
+
+            <div className="flex items-center h-[22px] cursor-pointer hover:bg-white/10">
+              <svg className="ml-8 w-4 h-4 text-neutral-200">
+                <use xlinkHref="codicon.svg#code" />
+              </svg>
+
+              <div className="ml-1 text-[13px] text-[#cccccc]">
+                projetos-pessoais.html
+              </div>
+            </div>
+          </div>
+
+          <div className="flex-1"></div>
+
+          <div className="flex items-center h-[22px] cursor-pointer border-t border-t-white/10">
+            <svg className="ml-[2px] w-4 h-4 text-neutral-200">
+              <use xlinkHref="codicon.svg#chevron-right" />
+            </svg>
+
+            <div className="ml-[2px] font-bold text-[11px] text-[#cccccc]">
+              OUTLINE
+            </div>
+          </div>
+
+          <div className="flex items-center h-[22px] cursor-pointer border-t border-t-white/10">
+            <svg className="ml-[2px] w-4 h-4 text-neutral-200">
+              <use xlinkHref="codicon.svg#chevron-right" />
+            </svg>
+
+            <div className="ml-[2px] font-bold text-[11px] text-[#cccccc]">
+              TIMELINE
+            </div>
+          </div>
         </div>
 
         {/* Main content */}
 
-        <div className="flex-1 flex flex-col">
-          <div className="h-[35px] flex">
-            <div className="px-1 flex items-center bg-[#1f1f1f] border-r border-r-white/10 border-t border-t-[#0078d4] text-[13px] cursor-pointer">
-              <div className="italic">Welcome</div>
+        <div className="flex-1 flex flex-col w-0">
+          <div className="flex overflow-x-auto">
+            <Tab name="Welcome" active />
+            <Tab name="carreira.html" />
+            <Tab name="competencias.html" />
+            <Tab name="fotos.html" />
+            <Tab name="projetos-pessoais.html" />
 
-              <div className="w-2"></div>
+            {/* Ellipsis */}
 
-              <div className="w-5 h-5 rounded flex items-center justify-center hover:bg-white/10 cursor-pointer">
-                <svg className="w-4 h-4 text-neutral-200">
-                  <use xlinkHref="codicon.svg#close" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="flex-1 border-b border-b-white/10 flex items-center">
+            <div className="flex-1 ml-2 border-b border-b-white/10 flex items-center">
               <div className="flex-1"></div>
 
               <div className="mr-2">
