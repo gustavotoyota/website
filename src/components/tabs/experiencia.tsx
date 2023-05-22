@@ -13,6 +13,10 @@ export default function ExperienciaTab() {
           # Experiência
 
           ---
+          
+          \`2021-2023\` - **Pausa para desenvolvimento pessoal**
+
+          &nbsp;
 
           \`2020\` - **Analista de Operações Comercial** - [Cielo](https://www.cielo.com.br/)
 
@@ -34,11 +38,13 @@ export default function ExperienciaTab() {
           
           &nbsp;
 
-          \`~2008\` - Primeiros contatos com programação
+          \`~2008\` - **Primeiros contatos com programação**
 
           - Desenvolvimento de bots de Tibia, PangYa e Runescape.
           - Criação e programação de OTServers.
           - Experimentação com Delphi, Pascal, HTML, CSS, Javascript, PHP, Java, Lua e WinAPI.
+
+          &nbsp;
         `)}
       />
     </div>

@@ -69,7 +69,7 @@ export default function Home() {
         </div>
       ) : null}
 
-      <div className="flex-1 flex select-none bg-[#181818]">
+      <div className="flex-1 flex select-none bg-[#181818] h-0">
         {/* Mini buttons */}
 
         <div className="flex-none w-12 border-r border-solid border-r-white/10 flex flex-col">
@@ -242,7 +242,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-1 bg-[#1f1f1f] select-text">
+          <div className="flex-1 bg-[#1f1f1f] select-text h-0 overflow-auto">
             {activeTab === "Welcome" ? (
               <WelcomeTab />
             ) : activeTab === "experiencia.html" ? (
