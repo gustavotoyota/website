@@ -38,7 +38,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("Welcome");
 
   return (
-    <main className="flex min-h-screen flex-col text-white bg-[#181818]">
+    <main className="flex h-[100%] flex-col text-white bg-[#181818]">
       {showBanner ? (
         <div className="pl-2 bg-[#323232] flex items-center py-[3px]">
           <div>
