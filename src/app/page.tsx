@@ -11,16 +11,17 @@ import ProjetosTab from "@/components/tabs/projetos";
 import WelcomeTab from "@/components/tabs/welcome";
 import { useStateEx } from "@/utils";
 import Image from "next/image";
+import { useEffect } from "react";
 import { useState } from "react";
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true);
 
-  const [activeAction, setActiveAction] = useState<string | null>(
-    typeof document !== "undefined" && document.body.clientWidth > 600
-      ? "files"
-      : null
-  );
+  const [activeAction, setActiveAction] = useState<string | null>("files");
+
+  useEffect(() => {
+    setActiveAction(document.body.clientWidth > 600 ? "files" : null);
+  }, []);
 
   const [activeItem, setActiveItem] = useState<string | null>(null);
 
