@@ -16,7 +16,7 @@ import { useState } from "react";
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true);
 
-  const [activeAction, setActiveAction] = useState("explorer");
+  const [activeAction, setActiveAction] = useState<string | null>("files");
 
   const [activeItem, setActiveItem] = useState<string | null>(null);
 
@@ -81,39 +81,39 @@ export default function Home() {
           </div>
 
           <MiniButton
-            icon="files"
-            active={activeAction === "explorer"}
-            onClick={() => setActiveAction("explorer")}
+            name="files"
+            activeAction={activeAction}
+            setActiveAction={setActiveAction}
           />
 
           <MiniButton
-            icon="search"
-            active={activeAction === "search"}
-            onClick={() => setActiveAction("search")}
+            name="search"
+            activeAction={activeAction}
+            setActiveAction={setActiveAction}
           />
 
           <MiniButton
-            icon="source-control"
-            active={activeAction === "source-control"}
-            onClick={() => setActiveAction("source-control")}
+            name="source-control"
+            activeAction={activeAction}
+            setActiveAction={setActiveAction}
           />
 
           <MiniButton
-            icon="debug"
-            active={activeAction === "debug"}
-            onClick={() => setActiveAction("debug")}
+            name="debug"
+            activeAction={activeAction}
+            setActiveAction={setActiveAction}
           />
 
           <MiniButton
-            icon="extensions"
-            active={activeAction === "extensions"}
-            onClick={() => setActiveAction("extensions")}
+            name="extensions"
+            activeAction={activeAction}
+            setActiveAction={setActiveAction}
           />
 
           <MiniButton
-            icon="remote-explorer"
-            active={activeAction === "remote-explorer"}
-            onClick={() => setActiveAction("remote-explorer")}
+            name="remote-explorer"
+            activeAction={activeAction}
+            setActiveAction={setActiveAction}
           />
 
           <div className="flex-1"></div>
@@ -133,77 +133,79 @@ export default function Home() {
 
         {/* Sidebar */}
 
-        <div className="flex-none w-64 bg-[#181818] border-r border-r-white/10 flex flex-col">
-          <div className="text-[11px] h-[35px] flex items-center">
-            <div className="flex-1 ml-5 text-[#cccccc]">EXPLORER</div>
+        {activeAction != null ? (
+          <div className="flex-none w-64 bg-[#181818] border-r border-r-white/10 flex flex-col">
+            <div className="text-[11px] h-[35px] flex items-center">
+              <div className="flex-1 ml-5 text-[#cccccc]">EXPLORER</div>
 
-            <div className="mr-2">
-              <div className="rounded w-[22px] h-[22px] hover:bg-white/10 cursor-pointer flex items-center justify-center">
-                <svg className="w-4 h-4 text-neutral-200">
-                  <use xlinkHref="codicon.svg#ellipsis" />
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex-1 flex flex-col">
-            <Section
-              name="WORKSPACE"
-              active={activeItem === "WORKSPACE"}
-              onClick={() => setActiveItem("WORKSPACE")}
-              expanded
-            >
-              <div
-                className={`flex items-center h-[22px] cursor-pointer hover:bg-white/10 border ${
-                  activeItem === "Gustavo Toyota"
-                    ? "border-[#0078d4] bg-white/10"
-                    : "border-transparent"
-                }`}
-                onClick={() => setActiveItem("Gustavo Toyota")}
-              >
-                <svg className="ml-4 w-4 h-4 text-neutral-200">
-                  <use xlinkHref="codicon.svg#chevron-down" />
-                </svg>
-
-                <div className="ml-[2px] text-[13px] text-[#cccccc]">
-                  Gustavo Toyota
+              <div className="mr-2">
+                <div className="rounded w-[22px] h-[22px] hover:bg-white/10 cursor-pointer flex items-center justify-center">
+                  <svg className="w-4 h-4 text-neutral-200">
+                    <use xlinkHref="codicon.svg#ellipsis" />
+                  </svg>
                 </div>
               </div>
+            </div>
 
-              {files.map((file) => (
-                <File
-                  name={file}
-                  key={file}
-                  active={file === activeItem}
-                  onClick={() => {
-                    if (!tabs.includes(file)) {
-                      setTabs([...tabs, file]);
-                    }
+            <div className="flex-1 flex flex-col">
+              <Section
+                name="WORKSPACE"
+                active={activeItem === "WORKSPACE"}
+                onClick={() => setActiveItem("WORKSPACE")}
+                expanded
+              >
+                <div
+                  className={`flex items-center h-[22px] cursor-pointer hover:bg-white/10 border ${
+                    activeItem === "Gustavo Toyota"
+                      ? "border-[#0078d4] bg-white/10"
+                      : "border-transparent"
+                  }`}
+                  onClick={() => setActiveItem("Gustavo Toyota")}
+                >
+                  <svg className="ml-4 w-4 h-4 text-neutral-200">
+                    <use xlinkHref="codicon.svg#chevron-down" />
+                  </svg>
 
-                    setActiveTab(file);
-                    setActiveItem(file);
-                  }}
-                />
-              ))}
-            </Section>
+                  <div className="ml-[2px] text-[13px] text-[#cccccc]">
+                    Gustavo Toyota
+                  </div>
+                </div>
 
-            <Section
-              name="OUTLINE"
-              active={activeItem === "OUTLINE"}
-              onClick={() => setActiveItem("OUTLINE")}
-            >
-              <div className="ml-3 mt-2">Olá.</div>
-            </Section>
+                {files.map((file) => (
+                  <File
+                    name={file}
+                    key={file}
+                    active={file === activeItem}
+                    onClick={() => {
+                      if (!tabs.includes(file)) {
+                        setTabs([...tabs, file]);
+                      }
 
-            <Section
-              name="TIMELINE"
-              active={activeItem === "TIMELINE"}
-              onClick={() => setActiveItem("TIMELINE")}
-            >
-              <div className="ml-3 mt-2">Tudo bem?</div>
-            </Section>
+                      setActiveTab(file);
+                      setActiveItem(file);
+                    }}
+                  />
+                ))}
+              </Section>
+
+              <Section
+                name="OUTLINE"
+                active={activeItem === "OUTLINE"}
+                onClick={() => setActiveItem("OUTLINE")}
+              >
+                <div className="ml-3 mt-2">Olá.</div>
+              </Section>
+
+              <Section
+                name="TIMELINE"
+                active={activeItem === "TIMELINE"}
+                onClick={() => setActiveItem("TIMELINE")}
+              >
+                <div className="ml-3 mt-2">Tudo bem?</div>
+              </Section>
+            </div>
           </div>
-        </div>
+        ) : null}
 
         {/* Main content */}
 
