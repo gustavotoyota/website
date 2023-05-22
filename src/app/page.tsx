@@ -16,7 +16,11 @@ import { useState } from "react";
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true);
 
-  const [activeAction, setActiveAction] = useState<string | null>("files");
+  const [activeAction, setActiveAction] = useState<string | null>(
+    typeof document !== "undefined" && document.body.clientWidth > 600
+      ? "files"
+      : null
+  );
 
   const [activeItem, setActiveItem] = useState<string | null>(null);
 
@@ -38,7 +42,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("Welcome");
 
   return (
-    <main className="flex h-[100%] flex-col text-white bg-[#181818]">
+    <main className="flex h-[100%] flex-col text-white">
       {showBanner ? (
         <div className="pl-2 bg-[#323232] flex items-center py-[3px]">
           <div>
@@ -68,10 +72,10 @@ export default function Home() {
         </div>
       ) : null}
 
-      <div className="flex-1 flex select-none">
+      <div className="flex-1 flex select-none bg-[#181818]">
         {/* Mini buttons */}
 
-        <div className="flex-none w-12 border-r border-r-white/10 flex flex-col">
+        <div className="flex-none w-12 border-r border-solid border-r-white/10 flex flex-col">
           <div className="group w-12 h-9 flex items-center justify-center relative cursor-pointer">
             <div className="hidden group-hover:block bg-[#0078d4] left-0 top-0 bottom-0 right-0"></div>
 
@@ -134,7 +138,7 @@ export default function Home() {
         {/* Sidebar */}
 
         {activeAction != null ? (
-          <div className="flex-none w-64 bg-[#181818] border-r border-r-white/10 flex flex-col">
+          <div className="flex-none w-64 border-r border-r-white/10 flex flex-col">
             <div className="text-[11px] h-[35px] flex items-center">
               <div className="flex-1 ml-5 text-[#cccccc]">EXPLORER</div>
 
@@ -241,7 +245,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-1 bg-[#1f1f1f]">
+          <div className="flex-1 bg-[#1f1f1f] select-text">
             {activeTab === "Welcome" ? (
               <WelcomeTab />
             ) : activeTab === "experiencia.html" ? (
