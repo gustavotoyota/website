@@ -211,7 +211,7 @@ export default function Home() {
         {/* Main content */}
 
         <div className="flex-1 flex flex-col w-0">
-          <div className="flex overflow-x-auto">
+          <div className="flex overflow-x-auto overflow-y-hidden">
             {tabs.map((tab) => (
               <Tab
                 name={tab}
