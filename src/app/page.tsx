@@ -53,10 +53,7 @@ export default function Home() {
 
           <div className="ml-1 flex-1">
             Estou à procura de emprego. Caso interessado, entrar em contato por{" "}
-            <a href="mailto:mail@gustavotoyota.dev" className="underline">
-              mail@gustavotoyota.dev
-            </a>
-            .
+            <a href="mailto:mail@gustavotoyota.dev">mail@gustavotoyota.dev</a>.
           </div>
 
           <div className="flex-none mr-2 flex items-center justify-center">
