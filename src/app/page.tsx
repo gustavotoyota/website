@@ -185,6 +185,10 @@ export default function Home() {
 
                       setActiveTab(file);
                       setActiveItem(file);
+
+                      if (document.body.clientWidth <= 600) {
+                        setActiveAction(null);
+                      }
                     }}
                   />
                 ))}

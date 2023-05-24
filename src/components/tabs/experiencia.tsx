@@ -16,6 +16,9 @@ export default function ExperienciaTab() {
           
           \`2021-2023\` - **Pausa para desenvolvimento pessoal**
 
+          - Desenvolvimento de alguns apps pessoais.          
+          - Mais informações em projetos.html.
+
           &nbsp;
 
           \`2020\` - **Analista de Operações Comercial** - [Cielo](https://www.cielo.com.br/)

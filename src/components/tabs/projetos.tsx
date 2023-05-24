@@ -10,7 +10,7 @@ export default function ProjetosTab() {
     >
       <ReactMarkdown
         children={prepareMarkdown(`
-          # Projetos
+          # Projetos pessoais
 
           ---
 
