@@ -1,6 +1,18 @@
-export default function Tab(props: any) {
+import Link from "next/link";
+
+export default function Tab(props: {
+  name: string;
+  path: string;
+  active: boolean;
+  icon?: string;
+  onClose?: (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    active: boolean
+  ) => void;
+}) {
   return (
-    <div
+    <Link
+      href={props.path}
       className={`group px-1 flex items-center
         ${props.active ? "" : "text-neutral-400"}
         ${props.active ? "bg-[#1f1f1f]" : "hover:bg-white/5"}
@@ -10,7 +22,6 @@ export default function Tab(props: any) {
         h-[35px]
         border-t
         ${props.active ? "border-t-[#0078d4]" : "border-t-transparent"}`}
-      onClick={props.onActivate}
     >
       <div className="ml-2">
         <svg className="w-4 h-4 text-[#e37933]">
@@ -28,15 +39,15 @@ export default function Tab(props: any) {
           ${props.active ? "" : "invisible group-hover:visible"}
           hover:bg-white/10 cursor-pointer`}
         onClick={(event) => {
-          event.stopPropagation();
+          event.preventDefault();
 
-          props.onClose?.(event);
+          props.onClose?.(event, props.active);
         }}
       >
         <svg className={`w-4 h-4 ${props.active ? "" : "text-neutral-400"}`}>
           <use xlinkHref="codicon.svg#close" />
         </svg>
       </div>
-    </div>
+    </Link>
   );
 }

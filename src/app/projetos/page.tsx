@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable react/no-children-prop */
 import { prepareMarkdown } from "@/utils";
 import ReactMarkdown from "react-markdown";

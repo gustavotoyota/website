@@ -1,3 +1,4 @@
+import MainLayout from "@/components/main-layout";
 import "./globals.css";
 import "modern-normalize/modern-normalize.css";
 import { Inter } from "next/font/google";
@@ -16,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <MainLayout>{children}</MainLayout>
+      </body>
     </html>
   );
 }
