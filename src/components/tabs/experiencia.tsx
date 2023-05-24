@@ -34,7 +34,7 @@ export default function ExperienciaTab() {
           - Principais atividades:
             - Monitor de Algoritmos e Programação.
             - Participações em maratonas de programação.]
-          - Utilização de C, C++, Python, Java, VHDL e Latex.
+          - Utilização de C, C++, Python e Java.
           
           &nbsp;
 
@@ -42,7 +42,7 @@ export default function ExperienciaTab() {
 
           - Desenvolvimento de bots de Tibia, PangYa e Runescape.
           - Criação e programação de OTServers.
-          - Experimentação com Delphi, Pascal, HTML, CSS, Javascript, PHP, Java, Lua e WinAPI.
+          - Experimentação com Delphi, Pascal, HTML, CSS, Javascript, PHP, Java e Lua.
 
           &nbsp;
         `)}
