@@ -1,5 +1,12 @@
 import { Dispatch, SetStateAction, useState } from "react";
 
+export const files = [
+  "experiencia.html",
+  "projetos.html",
+  "competencias.html",
+  "galeria.html",
+];
+
 export function useStateEx<S>(
   initialState: S | (() => S)
 ): [S, Dispatch<SetStateAction<S>>, () => Promise<S>] {

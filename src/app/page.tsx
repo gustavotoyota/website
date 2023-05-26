@@ -9,7 +9,7 @@ import ExperienciaTab from "@/components/tabs/experiencia";
 import GaleriaTab from "@/components/tabs/galeria";
 import ProjetosTab from "@/components/tabs/projetos";
 import WelcomeTab from "@/components/tabs/welcome";
-import { useStateEx } from "@/utils";
+import { files, useStateEx } from "@/utils";
 import Image from "next/image";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -25,20 +25,12 @@ export default function Home() {
 
   const [activeItem, setActiveItem] = useState<string | null>(null);
 
-  const files = [
-    "experiencia.html",
-    "projetos.html",
-    "competencias.html",
-    "galeria.html",
-  ];
+  const [tabs, setTabs, getTabs] = useStateEx(["Welcome", ...files]);
 
-  const [tabs, setTabs, getTabs] = useStateEx([
-    "Welcome",
-    "experiencia.html",
-    "projetos.html",
-    "competencias.html",
-    "galeria.html",
-  ]);
+  function setActiveFile(file: string) {
+    setActiveItem(file);
+    setActiveTab(file);
+  }
 
   const [activeTab, setActiveTab] = useState("Welcome");
 
@@ -183,8 +175,7 @@ export default function Home() {
                         setTabs([...tabs, file]);
                       }
 
-                      setActiveTab(file);
-                      setActiveItem(file);
+                      setActiveFile(file);
 
                       if (document.body.clientWidth <= 600) {
                         setActiveAction(null);
@@ -222,11 +213,11 @@ export default function Home() {
                 name={tab}
                 active={tab === activeTab}
                 icon={tab === "Welcome" ? "home" : "code"}
-                onActivate={() => setActiveTab(tab)}
+                onActivate={() => setActiveFile(tab)}
                 onClose={async () => {
                   setTabs(tabs.filter((t) => t !== tab));
 
-                  setActiveTab((await getTabs())[0]);
+                  setActiveFile((await getTabs())[0]);
                 }}
                 key={tab}
               />
@@ -249,7 +240,7 @@ export default function Home() {
 
           <div className="flex-1 bg-[#1f1f1f] select-text h-0 overflow-auto">
             {activeTab === "Welcome" ? (
-              <WelcomeTab />
+              <WelcomeTab setActiveFile={setActiveFile} />
             ) : activeTab === "experiencia.html" ? (
               <ExperienciaTab />
             ) : activeTab === "projetos.html" ? (

@@ -1,9 +1,11 @@
 /* eslint-disable react/no-children-prop */
-import { prepareMarkdown } from "@/utils";
+import { files, prepareMarkdown } from "@/utils";
 import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
-export default function WelcomeTab() {
+export default function WelcomeTab(props: {
+  setActiveFile: (file: string) => void;
+}) {
   return (
     <div
       className="px-5 py-1"
@@ -22,18 +24,11 @@ export default function WelcomeTab() {
       />
 
       <ul>
-        <li>
-          <Link href="/experiencia">experiencia.html</Link>
-        </li>
-        <li>
-          <Link href="/projetos">projetos.html</Link>
-        </li>
-        <li>
-          <Link href="/competencias">competencias.html</Link>
-        </li>
-        <li>
-          <Link href="/galeria">galeria.html</Link>
-        </li>
+        {files.map((file) => (
+          <li key={file}>
+            <a onClick={() => props.setActiveFile(file)}>{file}</a>
+          </li>
+        ))}
       </ul>
     </div>
   );
