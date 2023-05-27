@@ -242,7 +242,7 @@ export default function Home() {
             {activeTab === "Welcome" ? (
               <WelcomeTab setActiveFile={setActiveFile} />
             ) : activeTab === "experiencia.html" ? (
-              <ExperienciaTab />
+              <ExperienciaTab setActiveFile={setActiveFile} />
             ) : activeTab === "projetos.html" ? (
               <ProjetosTab />
             ) : activeTab === "competencias.html" ? (

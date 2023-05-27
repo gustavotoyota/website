@@ -2,7 +2,9 @@
 import { prepareMarkdown } from "@/utils";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
-export default function ExperienciaTab() {
+export default function ExperienciaTab(props: {
+  setActiveFile: (file: string) => void;
+}) {
   return (
     <div
       className="px-5 py-1"
@@ -15,13 +17,35 @@ export default function ExperienciaTab() {
           ---
           
           \`2021-2023\` - **Pausa para desenvolvimento pessoal**
+        `)}
+      />
 
-          - Desenvolvimento de alguns apps pessoais.          
-          - Mais informações em projetos.html.
+      <ul>
+        <li>
+          Desenvolvimento de alguns apps pessoais.
+          <ul>
+            <li>
+              Mais informações em{" "}
+              <a onClick={() => props.setActiveFile("projetos.html")}>
+                projetos.html
+              </a>
+              .
+            </li>
+          </ul>
+        </li>
+      </ul>
 
+      <ReactMarkdown
+        children={prepareMarkdown(`
           &nbsp;
 
           \`2020\` - **Analista de Operações Comercial** - [Cielo](https://www.cielo.com.br/)
+
+          - Desenvolvimento de ferramentas e sistemas internos para apoio aos gestores de taxas de clientes da Cielo.
+          - Análise de dados e criação de relatórios.
+          - Utilização de C#, VBA, SQL, HTML, CSS e Javascript.
+
+          &nbsp;
 
           \`2019\` - **Estagiário** - [Cielo](https://www.cielo.com.br/)
 
@@ -36,7 +60,7 @@ export default function ExperienciaTab() {
           - Campus Sorocaba.
           - Principais atividades:
             - Monitor de Algoritmos e Programação.
-            - Participações em maratonas de programação.]
+            - Participações em maratonas de programação.
           - Utilização de C, C++, Python e Java.
           
           &nbsp;
