@@ -15,7 +15,7 @@ export default function ProjetosTab() {
           ---
 
           \`2023\` - **[GustavoToyota.dev](https://gustavotoyota.dev/)** - Site pessoal
-          - Site pessoal para portifólio e outras coisas futuramente.
+          - Site pessoal para portifólio, entre outras coisas.
           - Desenvolvido com Next.js (React), TailwindCSS e Typescript.
 
           &nbsp;

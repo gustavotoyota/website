@@ -22,7 +22,7 @@ export default function ExperienciaTab(props: {
 
       <ul>
         <li>
-          Desenvolvimento de alguns apps pessoais.
+          Desenvolvimento de alguns projetos pessoais.
           <ul>
             <li>
               Mais informações em{" "}
@@ -55,9 +55,8 @@ export default function ExperienciaTab(props: {
 
           &nbsp;
 
-          \`2015-2019\` - **Bacharel em Ciência da Computação** - [UFSCar](https://www.ufscar.br/)
+          \`2015-2019\` - **Bacharel em Ciência da Computação** - [UFSCar](https://www.ufscar.br/) - Campus Sorocaba
 
-          - Campus Sorocaba.
           - Principais atividades:
             - Monitor de Algoritmos e Programação.
             - Participações em maratonas de programação.
@@ -69,7 +68,7 @@ export default function ExperienciaTab(props: {
 
           - Desenvolvimento de bots de Tibia, PangYa e Runescape.
           - Criação e programação de OTServers.
-          - Experimentação com Delphi, Pascal, HTML, CSS, Javascript, PHP, Java e Lua.
+          - Utilização de Delphi, Pascal, HTML, CSS, Javascript, PHP, Java e Lua.
 
           &nbsp;
         `)}
