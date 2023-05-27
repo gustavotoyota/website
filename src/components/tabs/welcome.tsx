@@ -15,7 +15,7 @@ export default function WelcomeTab(props: {
         children={prepareMarkdown(`
           # Bem-vindo(a)!
 
-          ![Bem-vindo(a)!](/IMG-20190310-WA0005.png "Sorrindo com o prêmio que ganhei no bingo")
+          ![Bem-vindo(a)!](/images/welcome.png "Sorrindo com o prêmio que ganhei no bingo")
 
           Bem-vindo(a) ao meu site pessoal! \\
           Aqui você pode encontrar informações sobre mim, meus projetos e minhas experiências.

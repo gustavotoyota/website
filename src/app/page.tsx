@@ -256,7 +256,7 @@ export default function Home() {
 
       {/* Status bar */}
 
-      <div className="flex-none h-[23px] border-t border-t-white/10 flex">
+      <div className="flex-none h-[23px] bg-[#181818] border-t border-t-white/10 flex">
         <div className="w-[34px] bg-[#0078D4] flex items-center justify-center hover:brightness-110 cursor-pointer">
           <svg className="w-[14px] h-[14px]">
             <use xlinkHref="codicon.svg#remote" />
