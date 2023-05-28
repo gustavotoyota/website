@@ -53,7 +53,15 @@ export default function ProjetosTab() {
           },
           {
             src: "/images/deepnotes/kanban.png",
-            alt: "Kanban",
+            alt: "Exemplo de kanban",
+          },
+          {
+            src: "/images/deepnotes/kanban-2.png",
+            alt: "Exemplo de kanban",
+          },
+          {
+            src: "/images/deepnotes/historia.png",
+            alt: "Estudo de história",
           },
           {
             src: "/images/deepnotes/neural-networks.png",
@@ -62,6 +70,18 @@ export default function ProjetosTab() {
           {
             src: "/images/deepnotes/typescript.png",
             alt: "Estudo de Typescript",
+          },
+          {
+            src: "/images/deepnotes/familia-real.png",
+            alt: "Árvore genealógica",
+          },
+          {
+            src: "/images/deepnotes/key-hierarchy.png",
+            alt: "Exemplo de diagrama",
+          },
+          {
+            src: "/images/deepnotes/authentication.png",
+            alt: "Exemplo de diagrama",
           },
         ]}
       />
