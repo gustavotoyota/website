@@ -13,9 +13,9 @@ export default function MiniButton(props: {
       }
     >
       <svg
-        className={`w-6 h-6 text-neutral-400 group-hover:text-neutral-200 ${
-          active ? "text-neutral-200" : ""
-        }`}
+        className={`w-6 h-6 ${
+          active ? "text-white/90" : "text-white/60"
+        } group-hover:text-white/90`}
       >
         <use xlinkHref={`codicon.svg#${props.name}`} />
       </svg>

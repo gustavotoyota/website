@@ -38,13 +38,9 @@ export default function Home() {
     <main className="flex h-[100%] flex-col text-white">
       {showBanner ? (
         <div className="pl-2 bg-[#323232] flex items-center py-[3px]">
-          <div>
-            <svg className="w-4 h-4 text-neutral-200">
-              <use xlinkHref="codicon.svg#code" />
-            </svg>
-          </div>
+          <Image src="/images/icon.png" alt="icon" width={16} height={16} />
 
-          <div className="ml-1 flex-1">
+          <div className="ml-2 flex-1">
             Para assuntos relacionados a negócios, entre em contato por{" "}
             <a href="mailto:mail@gustavotoyota.dev">mail@gustavotoyota.dev</a>.
           </div>
@@ -93,7 +89,7 @@ export default function Home() {
           />
 
           <MiniButton
-            name="debug"
+            name="debug-alt"
             activeAction={activeAction}
             setActiveAction={setActiveAction}
           />
@@ -137,7 +133,7 @@ export default function Home() {
                   ? "SEARCH"
                   : activeAction === "source-control"
                   ? "SOURCE CONTROL"
-                  : activeAction === "debug"
+                  : activeAction === "debug-alt"
                   ? "DEBUG"
                   : activeAction === "extensions"
                   ? "EXTENSIONS"
@@ -270,10 +266,42 @@ export default function Home() {
 
       {/* Status bar */}
 
-      <div className="flex-none h-[23px] bg-[#181818] border-t border-t-white/10 flex">
+      <div className="flex-none h-[23px] bg-[#181818] border-t border-t-white/10 flex select-none">
         <div className="w-[34px] bg-[#0078D4] flex items-center justify-center hover:brightness-110 cursor-pointer">
           <svg className="w-[14px] h-[14px]">
             <use xlinkHref="codicon.svg#remote" />
+          </svg>
+        </div>
+
+        <div className="ml-1 px-1 flex items-center text-xs hover:bg-white/10 cursor-pointer">
+          <svg className="w-[14px] h-[14px] text-white/75">
+            <use xlinkHref="codicon.svg#error" />
+          </svg>
+
+          <div className="ml-[2px] text-white/90">0</div>
+
+          <svg className="ml-[2px] w-[14px] h-[14px] text-white/75">
+            <use xlinkHref="codicon.svg#warning" />
+          </svg>
+
+          <div className="ml-[2px] text-white/90">0</div>
+        </div>
+
+        <div className="flex-1"></div>
+
+        <div className="px-1 flex items-center text-xs text-white/80 hover:bg-white/10 cursor-pointer">
+          Layout: us
+        </div>
+
+        <div className="ml-2 px-1 flex items-center text-xs text-white/80 hover:bg-white/10 cursor-pointer">
+          <svg className="w-[14px] h-[14px] text-white/85">
+            <use xlinkHref="codicon.svg#feedback" />
+          </svg>
+        </div>
+
+        <div className="mx-2 px-1 flex items-center text-xs text-white/80 hover:bg-white/10 cursor-pointer">
+          <svg className="w-[14px] h-[14px] text-white/85">
+            <use xlinkHref="codicon.svg#bell" />
           </svg>
         </div>
       </div>
