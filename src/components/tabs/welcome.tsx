@@ -24,6 +24,7 @@ export default function WelcomeTab(props: {
           Pode utilizar esses links também:
         `)}
       />
+
       <ul>
         {files.map((file) => (
           <li key={file}>
@@ -31,8 +32,14 @@ export default function WelcomeTab(props: {
           </li>
         ))}
       </ul>
-      E-mail para contato:{" "}
-      <a href="mailto:mail@gustavotoyota.dev">mail@gustavotoyota.dev</a>
+
+      <ReactMarkdown
+        children={prepareMarkdown(`
+          E-mail para contato: [mail@gustavotoyota.dev](mailto:mail@gustavotoyota.dev)
+
+          &nbsp;
+        `)}
+      />
     </div>
   );
 }
