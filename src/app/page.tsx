@@ -45,7 +45,7 @@ export default function Home() {
           </div>
 
           <div className="ml-1 flex-1">
-            Estou à procura de emprego. Caso interessado, entrar em contato por{" "}
+            Para assuntos relacionados a negócios, entre em contato por{" "}
             <a href="mailto:mail@gustavotoyota.dev">mail@gustavotoyota.dev</a>.
           </div>
 
@@ -130,7 +130,21 @@ export default function Home() {
         {activeAction != null ? (
           <div className="flex-none w-64 border-r border-r-white/10 flex flex-col">
             <div className="text-[11px] h-[35px] flex items-center">
-              <div className="flex-1 ml-5 text-[#cccccc]">EXPLORER</div>
+              <div className="flex-1 ml-5 text-[#cccccc]">
+                {activeAction === "files"
+                  ? "EXPLORER"
+                  : activeAction === "search"
+                  ? "SEARCH"
+                  : activeAction === "source-control"
+                  ? "SOURCE CONTROL"
+                  : activeAction === "debug"
+                  ? "DEBUG"
+                  : activeAction === "extensions"
+                  ? "EXTENSIONS"
+                  : activeAction === "remote-explorer"
+                  ? "REMOTE EXPLORER"
+                  : null}
+              </div>
 
               <div className="mr-2">
                 <div className="rounded w-[22px] h-[22px] hover:bg-white/10 cursor-pointer flex items-center justify-center">

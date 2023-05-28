@@ -32,6 +32,7 @@ export default function ExperienciaTab(props: {
                 projetos.html
               </a>
             </li>
+            <li>Foco em Typescript.</li>
           </ul>
         </li>
       </ul>
@@ -208,8 +209,8 @@ export default function ExperienciaTab(props: {
             alt: "Amigos - Pizzaria",
           },
           {
-            src: "/images/ufscar/Amigos-Jineraton-House.jpg",
-            alt: "Amigos - Jineraton House",
+            src: "/images/ufscar/Amigos-Jirenaton-House.jpg",
+            alt: "Amigos - Jirenaton House",
           },
         ]}
       />

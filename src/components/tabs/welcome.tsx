@@ -24,7 +24,6 @@ export default function WelcomeTab(props: {
           Pode utilizar esses links também:
         `)}
       />
-
       <ul>
         {files.map((file) => (
           <li key={file}>
@@ -32,6 +31,8 @@ export default function WelcomeTab(props: {
           </li>
         ))}
       </ul>
+      E-mail para contato:{" "}
+      <a href="mailto:mail@gustavotoyota.dev">mail@gustavotoyota.dev</a>
     </div>
   );
 }
