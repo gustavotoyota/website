@@ -1,4 +1,12 @@
-export default function Tab(props: any) {
+import Image from "next/image";
+
+export default function Tab(props: {
+  active: boolean;
+  name: string;
+  icon?: string;
+  onActivate: () => void;
+  onClose?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+}) {
   return (
     <div
       className={`group px-1 flex items-center
@@ -13,9 +21,13 @@ export default function Tab(props: any) {
       onClick={props.onActivate}
     >
       <div className="ml-2">
-        <svg className="w-4 h-4 text-[#e37933]">
-          <use xlinkHref={`codicon.svg#${props.icon ? props.icon : "code"}`} />
-        </svg>
+        {props.icon ? (
+          <svg className="w-4 h-4 text-[#e37933]">
+            <use xlinkHref={`codicon.svg#${props.icon}`} />
+          </svg>
+        ) : (
+          <Image src="/images/icon.png" alt="icon" width={16} height={16} />
+        )}
       </div>
 
       <div className="ml-1 whitespace-nowrap">{props.name}</div>

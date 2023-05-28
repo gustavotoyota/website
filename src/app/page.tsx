@@ -226,7 +226,7 @@ export default function Home() {
               <Tab
                 name={tab}
                 active={tab === activeTab}
-                icon={tab === "Welcome" ? "home" : "code"}
+                icon={tab === "Welcome" ? undefined : "code"}
                 onActivate={() => setActiveFile(tab)}
                 onClose={async () => {
                   setTabs(tabs.filter((t) => t !== tab));
