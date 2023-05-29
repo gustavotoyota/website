@@ -248,7 +248,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-1 bg-[#1f1f1f] select-text h-0 overflow-auto">
+          <div
+            key={activeTab}
+            className="flex-1 bg-[#1f1f1f] select-text h-0 overflow-auto"
+          >
             <div className="max-w-[1200px]">
               {activeTab === "Welcome" ? (
                 <WelcomeTab setActiveFile={setActiveFile} />
