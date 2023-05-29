@@ -57,18 +57,6 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
       {currentImageIdx != null ? (
         <div className="fixed inset-0 bg-black select-none flex flex-col">
           <div className="flex-1 relative">
-            {/* Prev image */}
-
-            {prevImageIdx != null ? (
-              <Image
-                key={prevImageIdx}
-                src={props.images[prevImageIdx].src}
-                alt={props.images[prevImageIdx].alt}
-                fill={true}
-                className="invisible"
-              />
-            ) : null}
-
             {/* Current image */}
 
             <Image
@@ -88,6 +76,18 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
                 key={nextImageIdx}
                 src={props.images[nextImageIdx].src}
                 alt={props.images[nextImageIdx].alt}
+                fill={true}
+                className="invisible"
+              />
+            ) : null}
+
+            {/* Prev image */}
+
+            {prevImageIdx != null ? (
+              <Image
+                key={prevImageIdx}
+                src={props.images[prevImageIdx].src}
+                alt={props.images[prevImageIdx].alt}
                 fill={true}
                 className="invisible"
               />
