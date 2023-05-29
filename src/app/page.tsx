@@ -249,17 +249,19 @@ export default function Home() {
           </div>
 
           <div className="flex-1 bg-[#1f1f1f] select-text h-0 overflow-auto">
-            {activeTab === "Welcome" ? (
-              <WelcomeTab setActiveFile={setActiveFile} />
-            ) : activeTab === "experiencia.html" ? (
-              <ExperienciaTab setActiveFile={setActiveFile} />
-            ) : activeTab === "projetos.html" ? (
-              <ProjetosTab />
-            ) : activeTab === "competencias.html" ? (
-              <CompetenciasTab />
-            ) : activeTab === "galeria.html" ? (
-              <GaleriaTab />
-            ) : null}
+            <div className="max-w-[1200px]">
+              {activeTab === "Welcome" ? (
+                <WelcomeTab setActiveFile={setActiveFile} />
+              ) : activeTab === "experiencia.html" ? (
+                <ExperienciaTab setActiveFile={setActiveFile} />
+              ) : activeTab === "projetos.html" ? (
+                <ProjetosTab />
+              ) : activeTab === "competencias.html" ? (
+                <CompetenciasTab />
+              ) : activeTab === "galeria.html" ? (
+                <GaleriaTab />
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
