@@ -7,6 +7,16 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
     number | null
   >(null);
 
+  const prevImageIdx =
+    currentImageIdx != null
+      ? (currentImageIdx + props.images.length - 1) % props.images.length
+      : null;
+
+  const nextImageIdx =
+    currentImageIdx != null
+      ? (currentImageIdx + 1) % props.images.length
+      : null;
+
   useEffect(() => {
     // Keyboard
 
@@ -47,6 +57,20 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
       {currentImageIdx != null ? (
         <div className="fixed inset-0 bg-black select-none flex flex-col">
           <div className="flex-1 relative">
+            {/* Prev image */}
+
+            {prevImageIdx != null ? (
+              <Image
+                key={prevImageIdx}
+                src={props.images[prevImageIdx].src}
+                alt={props.images[prevImageIdx].alt}
+                fill={true}
+                className="invisible"
+              />
+            ) : null}
+
+            {/* Current image */}
+
             <Image
               key={currentImageIdx}
               src={props.images[currentImageIdx].src}
@@ -56,6 +80,18 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
               className="bg-black object-contain"
               draggable={false}
             />
+
+            {/* Next image */}
+
+            {nextImageIdx != null ? (
+              <Image
+                key={nextImageIdx}
+                src={props.images[nextImageIdx].src}
+                alt={props.images[nextImageIdx].alt}
+                fill={true}
+                className="invisible"
+              />
+            ) : null}
           </div>
 
           {/* Caption */}
