@@ -17,7 +17,7 @@ export default function CompetenciasTab() {
           Recentemente, tenho utilizado bastante as seguintes tecnologias:
 
           - Typescript, Javascript
-          - Vue, HTML, CSS, TailwindCSS
+          - Vue, HTML, CSS, TailwindCSS, Sass
           - Node.js, tRPC
           - SQL, PostgreSQL
           - Redis
@@ -28,10 +28,10 @@ export default function CompetenciasTab() {
 
           Porém, já tive experiência com:
 
-          - Nuxt, Quasar, React, Next.js
+          - Nuxt, Quasar, React, Next.js, Django, Bootstrap, jQuery
           - Express, Fastify, NestJS
           - MySQL, Oracle, Redshift, Firebase, SQLite, SQL Server, Firebird, MS Access
-          - C#, Java, Python, PHP, C, C++, Pascal, Lua
+          - C#, VBA, Java, Python, PHP, C, C++, Pascal, Lua
         `)}
       />
     </div>
