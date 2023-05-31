@@ -17,7 +17,7 @@ export default function CompetenciasTab() {
           Recentemente, tenho utilizado bastante as seguintes tecnologias:
 
           - Typescript, Javascript
-          - Vue, HTML, CSS, TailwindCSS, Sass
+          - Vue, HTML, CSS, TailwindCSS, Sass, Figma
           - Node.js, tRPC, Redis
           - SQL, PostgreSQL
           - Git, Docker
