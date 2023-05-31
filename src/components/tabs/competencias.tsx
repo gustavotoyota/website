@@ -18,11 +18,9 @@ export default function CompetenciasTab() {
 
           - Typescript, Javascript
           - Vue, HTML, CSS, TailwindCSS, Sass
-          - Node.js, tRPC
+          - Node.js, tRPC, Redis
           - SQL, PostgreSQL
-          - Redis
-          - Docker
-          - Git
+          - Git, Docker
 
           &nbsp;
 
@@ -32,6 +30,7 @@ export default function CompetenciasTab() {
           - Express, Fastify, NestJS
           - MySQL, Oracle, Redshift, Firebase, SQLite, SQL Server, Firebird, MS Access
           - C#, VBA, Java, Python, PHP, C, C++, Pascal, Lua
+          - Selenium
         `)}
       />
     </div>
