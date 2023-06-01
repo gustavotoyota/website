@@ -18,23 +18,18 @@ export default function ExperienciaTab(props: {
 
           ---
           
-          \`2021-2023\` - **Pausa para desenvolvimento pessoal** - \`25-27 anos\`
+          \`2021-2023\` - **Desenvolvimento de projetos pessoais** - \`25-27 anos\`
         `)}
       />
 
       <ul>
         <li>
-          Desenvolvimento de alguns projetos pessoais:
-          <ul>
-            <li>
-              Mais informações em:{" "}
-              <a onClick={() => props.setActiveFile("projetos.html")}>
-                projetos.html
-              </a>
-            </li>
-            <li>Foco em Typescript.</li>
-          </ul>
+          Mais informações em:{" "}
+          <a onClick={() => props.setActiveFile("projetos.html")}>
+            projetos.html
+          </a>
         </li>
+        <li>Foco em Typescript.</li>
       </ul>
 
       <Gallery
@@ -58,7 +53,7 @@ export default function ExperienciaTab(props: {
         children={prepareMarkdown(`
           &nbsp;
 
-          \`2020\` - **Desenvolvedor de Software** - [Cielo](https://www.cielo.com.br/) - \`24 anos\`
+          \`2020\` - [Cielo](https://www.cielo.com.br/) - **Desenvolvedor de Software** - \`24 anos\`
 
           - Desenvolvimento de ferramentas e sistemas internos para apoio aos gestores de taxas de clientes da Cielo.
           - Utilização de C#, VBA, SQL, HTML, CSS e Javascript.
@@ -114,7 +109,7 @@ export default function ExperienciaTab(props: {
         children={prepareMarkdown(`
           &nbsp;
 
-          \`2019\` - **Estagiário** - [Cielo](https://www.cielo.com.br/) - \`23 anos\`
+          \`2019\` - [Cielo](https://www.cielo.com.br/) - **Estagiário** - \`23 anos\`
 
           - Automação de sistemas legados.
           - Utilização de C#, VBA, SQL, HTML, CSS e Javascript.
@@ -138,7 +133,7 @@ export default function ExperienciaTab(props: {
         children={prepareMarkdown(`
           &nbsp;
 
-          \`2015-2019\` - **Bacharel em Ciência da Computação** - [UFSCar](https://www.ufscar.br/) - Campus Sorocaba - \`19-23 anos\`
+          \`2015-2019\` - [UFSCar](https://www.ufscar.br/) - **Bacharel em Ciência da Computação** - Campus Sorocaba - \`19-23 anos\`
 
           - Principais atividades extracurriculares:
             - Monitor de Algoritmos e Programação I e II.
