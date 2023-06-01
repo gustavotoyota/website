@@ -136,9 +136,9 @@ export default function ExperienciaTab(props: {
           \`2015-2019\` - [UFSCar](https://www.ufscar.br/) - **Bacharel em Ciência da Computação** - Campus Sorocaba - \`19-23 anos\`
 
           - Principais atividades extracurriculares:
-            - Monitor de Algoritmos e Programação I e II.
-            - Participações em maratonas de programação.
-            - Organização da SeCoT (Semana da Computação e Tecnologia).
+            - Monitor de Algoritmos e Programação I entre Agosto e Dezembro de 2015, e de Algoritmos e Programação II entre Março e Julho de 2016, fornecendo assistência a alunos através da elaboração de listas de exercícios e esclarecimento de dúvidas sobre a disciplina.
+            - Competidor em diversas maratonas de programação, incluindo a XX Maratona de Programação (Sociedade Brasileira de Computação) em 2015 e a XXI Maratona de Programação em 2016.
+            - Membro da organização da SeCoT (Semana da Computação e Tecnologia) de 2015, 2016 e 2017.
           - Utilização de C, C++, Python e Java.
         `)}
       />
