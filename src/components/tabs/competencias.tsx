@@ -9,6 +9,7 @@ export default function CompetenciasTab() {
       style={{ fontSize: "1rem", lineHeight: "1.5rem" }}
     >
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           # Competências
 

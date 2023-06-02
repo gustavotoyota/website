@@ -13,6 +13,7 @@ export default function ExperienciaTab(props: {
       style={{ fontSize: "1rem", lineHeight: "1.5rem" }}
     >
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           # Experiência
 
@@ -50,6 +51,7 @@ export default function ExperienciaTab(props: {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           &nbsp;
 
@@ -106,6 +108,7 @@ export default function ExperienciaTab(props: {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           &nbsp;
 
@@ -130,6 +133,7 @@ export default function ExperienciaTab(props: {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           &nbsp;
 
@@ -209,6 +213,7 @@ export default function ExperienciaTab(props: {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           &nbsp;
 
@@ -234,6 +239,7 @@ export default function ExperienciaTab(props: {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           &nbsp;
         `)}

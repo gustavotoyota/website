@@ -12,6 +12,7 @@ export default function WelcomeTab(props: {
       style={{ fontSize: "1rem", lineHeight: "1.5rem" }}
     >
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           # Bem-vindo(a)!
 
@@ -34,8 +35,11 @@ export default function WelcomeTab(props: {
       </ul>
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
-          E-mail para contato: [mail@gustavotoyota.dev](mailto:mail@gustavotoyota.dev)
+          E-mail para contato: [mail@gustavotoyota.dev](mailto:mail@gustavotoyota.dev) \\
+          GitHub: [github.com/gustavotoyota](https://github.com/gustavotoyota/) \\
+          LinkedIn: [linkedin.com/in/gustavotoyota](https://www.linkedin.com/in/gustavotoyota/)
 
           &nbsp;
         `)}

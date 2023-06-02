@@ -10,6 +10,7 @@ export default function ProjetosTab() {
       style={{ fontSize: "1rem", lineHeight: "1.5rem" }}
     >
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           # Projetos pessoais
 
@@ -31,6 +32,7 @@ export default function ProjetosTab() {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           \`2022\` - **[DeepNotes.app](https://deepnotes.app/)** - The next level of note-taking
           - Aplicativo de anotações visuais com profundidade ilimitada.
@@ -87,6 +89,7 @@ export default function ProjetosTab() {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           \`2022\` - **[UniLogr](https://www.npmjs.com/package/unilogr)** - Universal Logger
           - UniLogr é um logger que suporta ambos Node.js e browser.
@@ -119,6 +122,7 @@ export default function ProjetosTab() {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           &nbsp;
         `)}

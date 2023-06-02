@@ -10,6 +10,7 @@ export default function GaleriaTab() {
       style={{ fontSize: "1rem", lineHeight: "1.5rem" }}
     >
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           # Galeria
 
@@ -73,6 +74,7 @@ export default function GaleriaTab() {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           ---
 
@@ -102,6 +104,7 @@ export default function GaleriaTab() {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           ---
 
@@ -259,6 +262,7 @@ export default function GaleriaTab() {
       />
 
       <ReactMarkdown
+        linkTarget={"_blank"}
         children={prepareMarkdown(`
           &nbsp;
         `)}
