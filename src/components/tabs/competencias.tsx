@@ -15,23 +15,23 @@ export default function CompetenciasTab() {
 
           ---
           
-          Recentemente, tenho utilizado bastante as seguintes tecnologias:
+          Recentemente, tenho focado nas seguintes tecnologias:
 
           - Typescript, Javascript
-          - Vue, HTML, CSS, TailwindCSS, Sass, Figma
+          - Vue, HTML, CSS, TailwindCSS, Sass
           - Node.js, tRPC, Redis
           - SQL, PostgreSQL
           - Git, Docker
 
           &nbsp;
 
-          Porém, já tive experiência com:
+          Porém, também possuo experiência com:
 
           - Nuxt, Quasar, React, Next.js, Django, Bootstrap, jQuery
           - Express, Fastify, NestJS
           - MySQL, Oracle, Redshift, Firebase, SQLite, SQL Server, Firebird, MS Access
           - C#, VBA, Java, Python, PHP, C, C++, Pascal, Lua
-          - Selenium
+          - Figma, Selenium
         `)}
       />
     </div>
