@@ -55,7 +55,7 @@ export default function ExperienciaTab(props: {
         children={prepareMarkdown(`
           &nbsp;
 
-          \`2020\` - [Cielo](https://www.cielo.com.br/) - **Desenvolvedor de Software** - \`24 anos\`
+          \`2020\` - [Cielo](https://www.cielo.com.br/) - **Analista de Operação Comercial** - \`24 anos\`
 
           - Desenvolvimento de ferramentas e sistemas internos para apoio aos gestores de taxas de clientes da Cielo.
           - Utilização de C#, VBA, SQL, HTML, CSS e Javascript.
