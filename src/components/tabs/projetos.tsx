@@ -16,9 +16,30 @@ export default function ProjetosTab() {
 
           ---
 
+          \`2023\` - **[ChessAnalyzer](https://chessanalyzer.gustavotoyota.dev/)** - Ferramenta de análise de posições de xadrez
+          - Desenvolvido com Next.js (React + Typescript), TailwindCSS e Stockfish 16.
+          - Repositório GitHub: [https://github.com/gustavotoyota/ChessAnalyzer](https://github.com/gustavotoyota/ChessAnalyzer)
+        `)}
+      />
+
+      <Gallery
+        images={[
+          {
+            src: "/images/chessanalyzer/chessanalyzer.png",
+            alt: "Screenshot",
+          },
+        ]}
+      />
+
+      <ReactMarkdown
+        linkTarget={"_blank"}
+        children={prepareMarkdown(`
+          &nbsp;
+
           \`2023\` - **[GustavoToyota.dev](https://gustavotoyota.dev/)** - Site pessoal
-          - Site pessoal para portifólio, entre outras coisas.
-          - Desenvolvido com Next.js (React), TailwindCSS e Typescript.
+          - Site pessoal para portifólio, entre outros.
+          - Desenvolvido com Next.js (React + Typescript) e TailwindCSS.
+          - Repositório GitHub: [https://github.com/gustavotoyota/website](https://github.com/gustavotoyota/website)
         `)}
       />
 
@@ -34,13 +55,16 @@ export default function ProjetosTab() {
       <ReactMarkdown
         linkTarget={"_blank"}
         children={prepareMarkdown(`
+          &nbsp;
+
           \`2022\` - **[DeepNotes.app](https://deepnotes.app/)** - The next level of note-taking
           - Aplicativo de anotações visuais com profundidade ilimitada.
           - Projetado para mapeamento de ideas complexas.
           - Possui end-to-end encryption, links bidirecionais e colaboração em tempo real.
           - Utilizo para guardar minhas [anotações pessoais](https://deepnotes.app/pages/euYw8Xg1JJ1I1BOpWkuA5).
           - Desenvolvido com Quasar (Vue 3 + Typescript), tRPC, Yjs, Redis, PostgreSQL e Docker.
-          `)}
+          - Repositório GitHub: [https://github.com/DeepNotesApp/DeepNotes](https://github.com/DeepNotesApp/DeepNotes)
+        `)}
       />
 
       <Gallery
@@ -91,16 +115,20 @@ export default function ProjetosTab() {
       <ReactMarkdown
         linkTarget={"_blank"}
         children={prepareMarkdown(`
+          &nbsp;
+
           \`2022\` - **[UniLogr](https://www.npmjs.com/package/unilogr)** - Universal Logger
           - UniLogr é um logger que suporta ambos Node.js e browser.
           - Inspirado no [Winston](https://www.npmjs.com/package/winston).
           - Desenvolvido com Typescript.
+          - Repositório GitHub: [https://github.com/gustavotoyota/unilogr](https://github.com/gustavotoyota/unilogr)
 
           &nbsp;
 
           \`2021\` - **[VisualSQL.net](https://visualsql.net/)** - Construtor visual de queries SQL
           - Inspirado em SAS.
           - Desenvolvido com Nuxt 2 (Vue 2 + Typescript).
+          - Repositório GitHub: [https://github.com/gustavotoyota/VisualSQL](https://github.com/gustavotoyota/VisualSQL)
         `)}
       />
 
