@@ -194,7 +194,7 @@ export default function ExperienciaTab(props: {
             alt: "SeCoT 2015",
           },
           {
-            src: '/images/ufscar/"Baloes++;"-segundo-lugar-na-maratona-da-UFScar.jpg',
+            src: "/images/ufscar/segundo-lugar-na-maratona-da-UFScar.jpg",
             alt: "2º lugar na maratona - Baloes++;",
           },
           {
