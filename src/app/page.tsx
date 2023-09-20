@@ -6,7 +6,6 @@ import Section from "@/components/section";
 import Tab from "@/components/tab";
 import CompetenciasTab from "@/components/tabs/competencias";
 import ExperienciaTab from "@/components/tabs/experiencia";
-import GaleriaTab from "@/components/tabs/galeria";
 import ProjetosTab from "@/components/tabs/projetos";
 import WelcomeTab from "@/components/tabs/welcome";
 import { files, useStateEx } from "@/utils";
@@ -235,8 +234,6 @@ export default function Home() {
                 <ProjetosTab />
               ) : activeTab === "competencias.html" ? (
                 <CompetenciasTab />
-              ) : activeTab === "galeria.html" ? (
-                <GaleriaTab />
               ) : null}
             </div>
           </div>
