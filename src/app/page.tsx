@@ -10,13 +10,9 @@ import GaleriaTab from "@/components/tabs/galeria";
 import ProjetosTab from "@/components/tabs/projetos";
 import WelcomeTab from "@/components/tabs/welcome";
 import { files, useStateEx } from "@/utils";
-import Image from "next/image";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [showBanner, setShowBanner] = useState(true);
-
   const [activeAction, setActiveAction] = useState<string | null>("files");
 
   useEffect(() => {
@@ -36,28 +32,6 @@ export default function Home() {
 
   return (
     <main className="flex h-[100%] flex-col text-white">
-      {showBanner ? (
-        <div className="pl-2 bg-[#323232] flex items-center py-[3px]">
-          <Image src="/images/icon.png" alt="icon" width={16} height={16} />
-
-          <div className="ml-2 flex-1">
-            Para assuntos relacionados a negócios, entre em contato por{" "}
-            <a href="mailto:mail@gustavotoyota.dev">mail@gustavotoyota.dev</a>.
-          </div>
-
-          <div className="flex-none mr-2 flex items-center justify-center">
-            <div
-              className="w-5 h-5 rounded flex items-center justify-center hover:bg-white/10 cursor-pointer"
-              onClick={() => setShowBanner(false)}
-            >
-              <svg className="w-4 h-4 text-neutral-200">
-                <use xlinkHref="codicon.svg#close" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      ) : null}
-
       <div className="flex-1 flex select-none bg-[#181818] h-0">
         {/* Mini buttons */}
 
