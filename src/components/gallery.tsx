@@ -1,11 +1,10 @@
-import { useStateEx } from "@/utils";
+import { useEventListener } from "@/hooks/use-event";
+import useStateWithRef from "@/hooks/use-state-with-ref";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 export function Gallery(props: { images: { src: string; alt: string }[] }) {
-  const [currentImageIdx, setCurrentImageIdx, getCurrentImageIdx] = useStateEx<
-    number | null
-  >(null);
+  const [currentImageIdx, setCurrentImageIdx, currentImageIdxRef] =
+    useStateWithRef<number | null>(() => null);
 
   const prevImageIdx =
     currentImageIdx != null
@@ -17,13 +16,11 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
       ? (currentImageIdx + 1) % props.images.length
       : null;
 
-  useEffect(() => {
-    // Keyboard
-
-    const handleKeyDown = async (event: KeyboardEvent) => {
-      const currentImageIdx = await getCurrentImageIdx();
-
-      if (currentImageIdx == null) {
+  useEventListener(
+    () => window,
+    "keydown",
+    (event) => {
+      if (currentImageIdxRef.current == null) {
         return;
       }
 
@@ -33,22 +30,20 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
 
       if (event.key === "ArrowLeft") {
         setCurrentImageIdx(
-          () =>
-            (currentImageIdx + props.images.length - 1) % props.images.length
+          (oldCurrentImageIdx) =>
+            ((oldCurrentImageIdx ?? 0) + props.images.length - 1) %
+            props.images.length
         );
       }
 
       if (event.key === "ArrowRight") {
-        setCurrentImageIdx(() => (currentImageIdx + 1) % props.images.length);
+        setCurrentImageIdx(
+          (oldCurrentImageIdx) =>
+            ((oldCurrentImageIdx ?? 0) + 1) % props.images.length
+        );
       }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+    }
+  );
 
   return (
     <>
@@ -120,8 +115,8 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
               className="w-10 h-10 text-white/90"
               onClick={() =>
                 setCurrentImageIdx(
-                  () =>
-                    (currentImageIdx + props.images.length - 1) %
+                  (oldCurrentImageIdx) =>
+                    ((oldCurrentImageIdx ?? 0) + props.images.length - 1) %
                     props.images.length
                 )
               }
@@ -137,7 +132,8 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
               className="w-10 h-10 text-white/90"
               onClick={() =>
                 setCurrentImageIdx(
-                  () => (currentImageIdx + 1) % props.images.length
+                  (oldCurrentImageIdx) =>
+                    ((oldCurrentImageIdx ?? 0) + 1) % props.images.length
                 )
               }
             >

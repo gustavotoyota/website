@@ -1,11 +1,12 @@
+"use client";
+
+import { fileInfos } from "@/misc/files";
 /* eslint-disable react/no-children-prop */
-import { files, prepareMarkdown } from "@/utils";
+import { prepareMarkdown } from "@/misc/utils";
 import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
-export default function WelcomeTab(props: {
-  setActiveFile: (file: string) => void;
-}) {
+export default function Home() {
   return (
     <div
       className="px-5 py-1"
@@ -27,9 +28,9 @@ export default function WelcomeTab(props: {
       />
 
       <ul>
-        {files.map((file) => (
-          <li key={file}>
-            <a onClick={() => props.setActiveFile(file)}>{file}</a>
+        {fileInfos.map((file) => (
+          <li key={file.name}>
+            <Link href={file.path}>{file.name}</Link>
           </li>
         ))}
       </ul>

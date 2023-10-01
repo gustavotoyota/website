@@ -1,8 +1,10 @@
+"use client";
+
 /* eslint-disable react/no-children-prop */
-import { prepareMarkdown } from "@/utils";
+import { prepareMarkdown } from "@/misc/utils";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
-export default function CompetenciasTab() {
+export default function Competencias() {
   return (
     <div
       className="px-5 py-1"

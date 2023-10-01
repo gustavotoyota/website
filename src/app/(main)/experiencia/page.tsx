@@ -1,12 +1,12 @@
-/* eslint-disable react/no-children-prop */
-import { prepareMarkdown } from "@/utils";
-import Image from "next/image";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { Gallery } from "../gallery";
+"use client";
 
-export default function ExperienciaTab(props: {
-  setActiveFile: (file: string) => void;
-}) {
+/* eslint-disable react/no-children-prop */
+import { prepareMarkdown } from "@/misc/utils";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { Gallery } from "../../../components/gallery";
+import Link from "next/link";
+
+export default function Experiencia() {
   return (
     <div
       className="px-5 py-1"
@@ -25,10 +25,7 @@ export default function ExperienciaTab(props: {
 
       <ul>
         <li>
-          Mais informações em:{" "}
-          <a onClick={() => props.setActiveFile("projetos.html")}>
-            projetos.html
-          </a>
+          Mais informações em: <Link href="/projetos">projetos.html</Link>
         </li>
         <li>Foco em Typescript.</li>
       </ul>

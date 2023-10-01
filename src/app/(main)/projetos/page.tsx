@@ -1,9 +1,11 @@
-/* eslint-disable react/no-children-prop */
-import { prepareMarkdown } from "@/utils";
-import ReactMarkdown from "react-markdown";
-import { Gallery } from "../gallery";
+"use client";
 
-export default function ProjetosTab() {
+/* eslint-disable react/no-children-prop */
+import { prepareMarkdown } from "@/misc/utils";
+import ReactMarkdown from "react-markdown";
+import { Gallery } from "../../../components/gallery";
+
+export default function Projetos() {
   return (
     <div
       className="px-5 py-1"

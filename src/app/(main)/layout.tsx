@@ -4,30 +4,31 @@ import File from "@/components/file";
 import MiniButton from "@/components/mini-button";
 import Section from "@/components/section";
 import Tab from "@/components/tab";
-import CompetenciasTab from "@/components/tabs/competencias";
-import ExperienciaTab from "@/components/tabs/experiencia";
-import ProjetosTab from "@/components/tabs/projetos";
-import WelcomeTab from "@/components/tabs/welcome";
-import { files, useStateEx } from "@/utils";
+import useStateWithRef from "@/hooks/use-state-with-ref";
+import { FileInfo, fileInfos } from "@/misc/files";
+import "modern-normalize/modern-normalize.css";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function MainLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const pathname = usePathname();
+
   const [activeAction, setActiveAction] = useState<string | null>("files");
 
   useEffect(() => {
-    setActiveAction(document.body.clientWidth > 600 ? "files" : null);
+    setActiveAction(window.innerWidth > 600 ? "files" : null);
   }, []);
 
   const [activeItem, setActiveItem] = useState<string | null>(null);
 
-  const [tabs, setTabs, getTabs] = useStateEx(["Welcome", ...files]);
-
-  function setActiveFile(file: string) {
-    setActiveItem(file);
-    setActiveTab(file);
-  }
-
-  const [activeTab, setActiveTab] = useState("Welcome");
+  const [tabs, setTabs, tabsRef] = useStateWithRef<FileInfo[]>(() => [
+    { id: "welcome", name: "Welcome", path: "/" },
+    ...fileInfos,
+  ]);
 
   return (
     <main className="flex h-[100%] flex-col text-white">
@@ -45,38 +46,56 @@ export default function Home() {
 
           <MiniButton
             name="files"
-            activeAction={activeAction}
-            setActiveAction={setActiveAction}
+            active={activeAction === "files"}
+            onClick={() =>
+              setActiveAction(activeAction === "files" ? null : "files")
+            }
           />
 
           <MiniButton
             name="search"
-            activeAction={activeAction}
-            setActiveAction={setActiveAction}
+            active={activeAction === "search"}
+            onClick={() =>
+              setActiveAction(activeAction === "search" ? null : "search")
+            }
           />
 
           <MiniButton
             name="source-control"
-            activeAction={activeAction}
-            setActiveAction={setActiveAction}
+            active={activeAction === "source-control"}
+            onClick={() =>
+              setActiveAction(
+                activeAction === "source-control" ? null : "source-control"
+              )
+            }
           />
 
           <MiniButton
             name="debug-alt"
-            activeAction={activeAction}
-            setActiveAction={setActiveAction}
+            active={activeAction === "debug-alt"}
+            onClick={() =>
+              setActiveAction(activeAction === "debug-alt" ? null : "debug-alt")
+            }
           />
 
           <MiniButton
             name="extensions"
-            activeAction={activeAction}
-            setActiveAction={setActiveAction}
+            active={activeAction === "extensions"}
+            onClick={() =>
+              setActiveAction(
+                activeAction === "extensions" ? null : "extensions"
+              )
+            }
           />
 
           <MiniButton
             name="remote-explorer"
-            activeAction={activeAction}
-            setActiveAction={setActiveAction}
+            active={activeAction === "remote-explorer"}
+            onClick={() =>
+              setActiveAction(
+                activeAction === "remote-explorer" ? null : "remote-explorer"
+              )
+            }
           />
 
           <div className="flex-1"></div>
@@ -130,48 +149,45 @@ export default function Home() {
                 active={activeItem === "WORKSPACE"}
                 onClick={() => setActiveItem("WORKSPACE")}
                 expanded
+                depth={0}
               >
-                <div
-                  className={`flex items-center h-[22px] cursor-pointer hover:bg-white/10 border ${
-                    activeItem === "Gustavo Toyota"
-                      ? "border-[#0078d4] bg-white/10"
-                      : "border-transparent"
-                  }`}
+                <Section
+                  name="Gustavo Toyota"
+                  active={activeItem === "Gustavo Toyota"}
                   onClick={() => setActiveItem("Gustavo Toyota")}
+                  expanded
+                  depth={1}
                 >
-                  <svg className="ml-4 w-4 h-4 text-neutral-200">
-                    <use xlinkHref="codicon.svg#chevron-down" />
-                  </svg>
+                  {fileInfos.map((file) => (
+                    <File
+                      name={file.name}
+                      path={file.path}
+                      depth={2}
+                      key={file.id}
+                      active={file.id === activeItem}
+                      onClick={() => {
+                        if (
+                          !tabsRef.current.some((tab) => tab.name === file.name)
+                        ) {
+                          setTabs((oldTabs) => [...oldTabs, { ...file }]);
+                        }
 
-                  <div className="ml-[2px] text-[13px] text-[#cccccc]">
-                    Gustavo Toyota
-                  </div>
-                </div>
+                        setActiveItem(file.id);
 
-                {files.map((file) => (
-                  <File
-                    name={file}
-                    key={file}
-                    active={file === activeItem}
-                    onClick={() => {
-                      if (!tabs.includes(file)) {
-                        setTabs([...tabs, file]);
-                      }
-
-                      setActiveFile(file);
-
-                      if (document.body.clientWidth <= 600) {
-                        setActiveAction(null);
-                      }
-                    }}
-                  />
-                ))}
+                        if (document.body.clientWidth <= 600) {
+                          setActiveAction(null);
+                        }
+                      }}
+                    />
+                  ))}
+                </Section>
               </Section>
 
               <Section
                 name="OUTLINE"
                 active={activeItem === "OUTLINE"}
                 onClick={() => setActiveItem("OUTLINE")}
+                depth={0}
               >
                 <div className="ml-3 mt-2">Olá.</div>
               </Section>
@@ -180,6 +196,7 @@ export default function Home() {
                 name="TIMELINE"
                 active={activeItem === "TIMELINE"}
                 onClick={() => setActiveItem("TIMELINE")}
+                depth={0}
               >
                 <div className="ml-3 mt-2">Tudo bem?</div>
               </Section>
@@ -193,16 +210,15 @@ export default function Home() {
           <div className="flex overflow-x-auto overflow-y-hidden">
             {tabs.map((tab) => (
               <Tab
-                name={tab}
-                active={tab === activeTab}
-                icon={tab === "Welcome" ? undefined : "code"}
-                onActivate={() => setActiveFile(tab)}
+                name={tab.name}
+                path={tab.path}
+                icon={tab.name === "Welcome" ? undefined : "code"}
                 onClose={async () => {
-                  setTabs(tabs.filter((t) => t !== tab));
+                  setTabs((oldTabs) => oldTabs.filter((t) => t !== tab));
 
-                  setActiveFile((await getTabs())[0]);
+                  setActiveItem(tabsRef.current[0].id);
                 }}
-                key={tab}
+                key={tab.id}
               />
             ))}
 
@@ -222,20 +238,10 @@ export default function Home() {
           </div>
 
           <div
-            key={activeTab}
+            key={pathname}
             className="flex-1 bg-[#1f1f1f] select-text h-0 overflow-auto"
           >
-            <div className="max-w-[1200px]">
-              {activeTab === "Welcome" ? (
-                <WelcomeTab setActiveFile={setActiveFile} />
-              ) : activeTab === "experiencia.html" ? (
-                <ExperienciaTab setActiveFile={setActiveFile} />
-              ) : activeTab === "projetos.html" ? (
-                <ProjetosTab />
-              ) : activeTab === "competencias.html" ? (
-                <CompetenciasTab />
-              ) : null}
-            </div>
+            <div className="max-w-[1200px]">{children}</div>
           </div>
         </div>
       </div>

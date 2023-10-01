@@ -1,6 +1,13 @@
 import { useState } from "react";
 
-export default function Section(props: any) {
+export default function Section(props: {
+  name: string;
+  active: boolean;
+  depth: number;
+  expanded?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  children: React.ReactNode;
+}) {
   const [expanded, setExpanded] = useState(props.expanded);
 
   return (
@@ -9,12 +16,15 @@ export default function Section(props: any) {
         className={`flex items-center h-[22px] cursor-pointer border ${
           props.active
             ? "border-[#0078d4]"
-            : "border-transparent border-t-white/10"
+            : props.depth === 0
+            ? "border-transparent border-t-white/10"
+            : "border-transparent"
         }`}
+        style={{ paddingLeft: `${props.depth * 12}px` }}
         onClick={(event) => {
           props.onClick?.(event);
 
-          setExpanded(!expanded);
+          setExpanded((oldExpanded) => !oldExpanded);
         }}
       >
         <svg className="ml-[2px] w-4 h-4 text-neutral-200">
@@ -25,7 +35,11 @@ export default function Section(props: any) {
           />
         </svg>
 
-        <div className="ml-[2px] font-bold text-[11px] text-[#cccccc]">
+        <div
+          className={`ml-[2px] ${
+            props.depth === 0 ? "font-bold text-[11px]" : ""
+          } text-[#cccccc]`}
+        >
           {props.name}
         </div>
       </div>
