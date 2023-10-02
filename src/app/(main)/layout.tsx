@@ -157,7 +157,7 @@ export default function MainLayout({
               </div>
             </div>
 
-            <div className="flex-1 flex flex-col">
+            <div className="flex-1 flex flex-col h-0">
               <Section
                 name="WORKSPACE"
                 active={activeItem === "WORKSPACE"}

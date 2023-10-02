@@ -13,7 +13,7 @@ export default function Section(props: {
   return (
     <>
       <div
-        className={`flex items-center h-[22px] cursor-pointer border ${
+        className={`flex flex-none items-center h-[22px] cursor-pointer border ${
           props.active
             ? "border-[#0078d4]"
             : props.depth === 0
@@ -45,8 +45,10 @@ export default function Section(props: {
       </div>
 
       <div
-        className={`transition-all overflow-hidden ${
-          expanded ? "flex-1" : "flex-none h-0"
+        className={`transition-all ${
+          props.depth === 0 ? "overflow-auto h-0" : ""
+        } flex flex-col ${
+          expanded ? "flex-1" : "overflow-hidden flex-none h-0"
         }`}
       >
         {props.children}
