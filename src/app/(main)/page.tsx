@@ -25,18 +25,9 @@ export default function Home() {
           Bem-vindo(a) ao meu site pessoal! \\
           Aqui você pode encontrar informações sobre mim, meus projetos e minhas experiências.
 
-          Navegue utilizando as abas acima ou o menu lateral esquerdo. \\
-          Pode utilizar esses links também:
+          Navegue utilizando as abas acima ou o menu lateral esquerdo.
         `)}
       />
-
-      <ul>
-        {mainFiles.map((file) => (
-          <li key={file.name}>
-            <Link href={file.path}>{file.name}</Link>
-          </li>
-        ))}
-      </ul>
 
       <ReactMarkdown
         linkTarget={"_blank"}
