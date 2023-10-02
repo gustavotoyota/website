@@ -5,7 +5,7 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 
 export const metadata: Metadata = {
-  title: "A teia invisível por trás dos códigos [02/10/2023] - Gustavo Toyota",
+  title: "A teia invisível por trás dos códigos [03/10/2023] - Gustavo Toyota",
   description:
     "No desenvolvimento de um software, à medida que o código vai tomando forma, uma teia invisível vai se formando por trás dele. Este artigo explora sua natureza.",
 };
@@ -23,7 +23,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
       <div className="h-4"></div>
 
       <div className="text-xs text-white/80">
-        Gustavo Toyota - 2 de outubro de 2023
+        Gustavo Toyota - 3 de outubro de 2023
       </div>
 
       <div className="h-9"></div>
@@ -38,7 +38,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
         />
 
         <div className="text-xs text-white/80">
-          Foto de{" "}
+          Imagem de{" "}
           <a
             href="https://www.flickr.com/photos/mollivan_jon/6681834037"
             target="_blank"
@@ -100,7 +100,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
         style={{ width: "100%", height: "auto", maxWidth: "400px" }}
       />
       <div className="text-xs text-white/80">
-        Dependência entre módulos (Imagem gerada com DALL·E)
+        Dependência entre módulos (DALL·E)
       </div>
 
       <div className="h-6"></div>
@@ -118,11 +118,11 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           
           ## Dependência possui consequências
           
-          Estamos tão acostumados em ver a palavra dependência no desenvolvimento de software, que dá a impressão de ser um simples plugin que você pode conectar e sair usando sem problemas.
+          Estamos tão acostumados em ver a palavra "dependência" no desenvolvimento de software, que dá a impressão de ser um simples plugin que você pode conectar e utilizar sem problemas.
           
           No entanto, existe um grande peso por trás dessa palavra.
           
-          A não ser que seja uma dependência opcional, quando um módulo depende de outro, ele fica à mercê do outro módulo. Ele atrela a sua própria estabilidade à estabilidade do outro módulo. De certa forma, ele vira um escravo do outro módulo.
+          A menos que seja uma dependência opcional, quando um módulo depende de outro, ele fica à mercê do outro módulo. Ele atrela a sua própria estabilidade ao outro módulo. De certa forma, ele vira um escravo do outro módulo.
           
           ## Mudanças e efeitos cascata
         `)}
@@ -164,12 +164,12 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
         src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/tight-coupling.webp"
         width={400}
         height={0}
-        alt="Representação visual de tight-coupling (Imagem gerada com DALL·E)"
+        alt="Representação visual de tight-coupling (DALL·E)"
         className="max-w-full"
         style={{ width: "100%", height: "auto", maxWidth: "400px" }}
       />
       <div className="text-xs text-white/80">
-        Representação visual de tight-coupling (Imagem gerada com DALL·E)
+        Representação visual de tight-coupling (DALL·E)
       </div>
 
       <div className="h-6"></div>
@@ -244,7 +244,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           
           Se um módulo fica à mercê de suas dependências, naturalmente gostaríamos de buscar os seguintes objetivos principais:
           
-          *   minimizar as dependências em módulos e em características de módulos, reduzindo o máximo possível as possibilidades de transferência de instabilidade;
+          *   minimizar as dependências entre módulos, reduzindo o máximo possível as possibilidades e o impacto de transferências de instabilidade;
           *   nas dependências que não puderem ser removidas, garantir que elas sejam as mais confiáveis e estáveis possíveis.
           
           Na busca por esses dois objetivos, diversas ideias e práticas acabam surgindo e se tornando muito importantes no desenvolvimento de software:
@@ -259,7 +259,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           
           ### **Efeitos colaterais, funções puras e imutabilidade**
           
-          Efeitos colaterais são manipulações de estados externos ao escopo de um bloco de código. Eles aumentam significativamente a quantidade de recursos necessários para podermos garantir que o código é confiável. É praticamente impossível eliminar efeitos colaterais de um código, mas podemos reduzí-los e isolá-los para que não exijam muitos recursos e para que não afetem muito a confiabilidade do software.
+          Efeitos colaterais são manipulações de estados externos ao escopo de um bloco de código. Eles aumentam significativamente a quantidade de recursos necessários para podermos garantir que o código é confiável. É praticamente impossível eliminar efeitos colaterais de um código, mas podemos reduzi-los e isolá-los para que não exijam muitos recursos e para que não afetem muito a confiabilidade do software.
           
           Funções puras são funções sem efeitos colaterais. Elas possuem resultados previsíveis, determinados somente pelos seus argumentos de entrada. Portanto, com elas é muito mais fácil garantir um código confiável.
           
@@ -267,23 +267,25 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           
           ### **Testes de software**
           
-          Testes de software são essenciais para reduzir a probabilidade de falhas no funcionamento de dependências. Em conjunto com as práticas mencionadas anteriormente, como injeção de dependência, dependência em abstrações, funções puras e imutabilidade, os testes de software são uma parte crucial do processo de desenvolvimento que busca a criação de sistemas confiáveis e de alta qualidade.
+          Testes de software são essenciais para reduzir a probabilidade de falhas no funcionamento de dependências. Em conjunto com as práticas mencionadas anteriormente, como injeção de dependência, dependência em abstrações, funções puras e imutabilidade, os testes de software são uma parte crucial do processo de desenvolvimento que busca a criação de sistemas confiáveis.
           
-          &nbsp;
+          ## Conclusão
 
-          A teia de dependências desempenha um papel crucial no desenvolvimento de software, ditando muitas das decisões tomadas ao longo do processo. À medida que o software cresce em complexidade e tamanho, a importância de compreender e gerenciar essas dependências torna-se ainda mais evidente. Portanto, compreender seu funcionamento é essencial para a construção de um software de alta qualidade.
+          Quando for introduzir uma dependência em seu código, avalie cuidadosamente a sua confiabilidade e estabilidade, seja ela um serviço, uma biblioteca ou até mesmo uma simples variável. Evite depender de características desnecessárias, mantendo seu código atrelado apenas a detalhes essenciais. Evite, sobretudo, usar características de dependências não explicitamente declaradas. Essas dicas são especialmente aplicáveis quando a dependência é desenvolvida internamente pela sua equipe ou por você mesmo.
+
+          A teia de dependências desempenha um papel crucial no desenvolvimento de software, ditando muitas das decisões tomadas ao longo do processo. À medida que o software cresce em complexidade e tamanho, a importância de compreender e gerenciar essas dependências torna-se ainda mais evidente. Portanto, é fundamental compreender o seu funcionamento para garantir a construção de um software de alta qualidade.
         `)}
       />
 
-      <div className="h-6"></div>
+      <div className="h-10"></div>
 
       <div className="p-3 border border-white/30 bg-black/40 flex">
         <Image
           src="/images/icon.png"
           alt="Foto de Gustavo Toyota"
           className="rounded-full "
-          width={100}
-          height={100}
+          width={128}
+          height={128}
         />
 
         <div className="flex-0 w-4"></div>

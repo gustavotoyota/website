@@ -14,7 +14,7 @@ export const mainFiles: FileInfo[] = [
 export const blogPosts: FileInfo[] = [
   {
     id: "a-teia-invisivel-por-tras-dos-codigos",
-    name: "A teia invisível por trás dos códigos [02/10/2023]",
+    name: "A teia invisível por trás dos códigos [03/10/2023]",
     path: "/blog/a-teia-invisivel-por-tras-dos-codigos",
   },
 ];
