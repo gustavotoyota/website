@@ -269,11 +269,47 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           
           Testes de software são essenciais para reduzir a probabilidade de falhas no funcionamento de dependências. Em conjunto com as práticas mencionadas anteriormente, como injeção de dependência, dependência em abstrações, funções puras e imutabilidade, os testes de software são uma parte crucial do processo de desenvolvimento que busca a criação de sistemas confiáveis e de alta qualidade.
           
-          ## Conclusão
+          &nbsp;
 
           A teia de dependências desempenha um papel crucial no desenvolvimento de software, ditando muitas das decisões tomadas ao longo do processo. À medida que o software cresce em complexidade e tamanho, a importância de compreender e gerenciar essas dependências torna-se ainda mais evidente. Portanto, compreender seu funcionamento é essencial para a construção de um software de alta qualidade.
         `)}
       />
+
+      <div className="h-6"></div>
+
+      <div className="p-3 border border-white/30 bg-black/40 flex">
+        <Image
+          src="/images/icon.png"
+          alt="Foto de Gustavo Toyota"
+          className="rounded-full "
+          width={100}
+          height={100}
+        />
+
+        <div className="flex-0 w-4"></div>
+
+        <div className="flex-1 flex flex-col">
+          <div className="text-white/80">
+            Sobre <b>Gustavo Toyota</b>
+          </div>
+
+          <div className="h-2"></div>
+
+          <div className="text-sm text-white/90 flex-1">
+            Desenvolvedor de software interessado em extrair o máximo de poder
+            da simplicidade, transformando códigos complexos em soluções
+            elegantes e eficientes.
+          </div>
+
+          <div className="h-2"></div>
+
+          <div>
+            <a href="mailto:mail@gustavotoyota.dev" className="text-sm">
+              mail@gustavotoyota.dev
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
