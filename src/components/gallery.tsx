@@ -1,3 +1,5 @@
+"use client";
+
 import { useEventListener } from "@/hooks/use-event";
 import useStateWithRef from "@/hooks/use-state-with-ref";
 import Image from "next/image";
@@ -104,7 +106,7 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
               className="w-8 h-8 text-white/90"
               onClick={() => setCurrentImageIdx(null)}
             >
-              <use xlinkHref="codicon.svg#close" />
+              <use xlinkHref="/codicon.svg#close" />
             </svg>
           </div>
 
@@ -121,7 +123,7 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
                 )
               }
             >
-              <use xlinkHref="codicon.svg#chevron-left" />
+              <use xlinkHref="/codicon.svg#chevron-left" />
             </svg>
           </div>
 
@@ -137,7 +139,7 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
                 )
               }
             >
-              <use xlinkHref="codicon.svg#chevron-right" />
+              <use xlinkHref="/codicon.svg#chevron-right" />
             </svg>
           </div>
         </div>

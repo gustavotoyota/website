@@ -5,9 +5,9 @@ import MiniButton from "@/components/mini-button";
 import Section from "@/components/section";
 import Tab from "@/components/tab";
 import useStateWithRef from "@/hooks/use-state-with-ref";
-import { FileInfo, fileInfos } from "@/misc/files";
+import { FileInfo, allFiles, blogPosts, mainFiles } from "@/misc/files";
 import "modern-normalize/modern-normalize.css";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function MainLayout({
@@ -16,6 +16,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
 
   const [activeAction, setActiveAction] = useState<string | null>("files");
 
@@ -23,12 +24,25 @@ export default function MainLayout({
     setActiveAction(window.innerWidth > 600 ? "files" : null);
   }, []);
 
-  const [activeItem, setActiveItem] = useState<string | null>(null);
+  const [activeItem, setActiveItem] = useState<string | null>(() => null);
 
-  const [tabs, setTabs, tabsRef] = useStateWithRef<FileInfo[]>(() => [
-    { id: "welcome", name: "Welcome", path: "/" },
-    ...fileInfos,
-  ]);
+  const [tabs, setTabs, tabsRef] = useStateWithRef<string[]>(() => {
+    return [...mainFiles.map((file) => file.id)];
+  });
+
+  useEffect(() => {
+    const currentFile = allFiles.find((file) => file.path === pathname);
+
+    if (currentFile != null) {
+      setActiveItem(currentFile.id);
+
+      setTabs((oldTabs) =>
+        oldTabs.some((tab) => tab === currentFile.id)
+          ? oldTabs
+          : [...oldTabs, currentFile.id]
+      );
+    }
+  }, [pathname]);
 
   return (
     <main className="flex h-[100%] flex-col text-white">
@@ -40,7 +54,7 @@ export default function MainLayout({
             <div className="hidden group-hover:block bg-[#0078d4] left-0 top-0 bottom-0 right-0"></div>
 
             <svg className="w-4 h-4 text-neutral-400 group-hover:text-neutral-300">
-              <use xlinkHref="codicon.svg#menu" />
+              <use xlinkHref="/codicon.svg#menu" />
             </svg>
           </div>
 
@@ -102,13 +116,13 @@ export default function MainLayout({
 
           <div className="group w-12 h-12 flex items-center justify-center relative cursor-pointer">
             <svg className="w-6 h-6 text-neutral-400 group-hover:text-neutral-200">
-              <use xlinkHref="codicon.svg#account" />
+              <use xlinkHref="/codicon.svg#account" />
             </svg>
           </div>
 
           <div className="group w-12 h-12 flex items-center justify-center relative cursor-pointer">
             <svg className="w-[27px] h-[27px] text-neutral-400 group-hover:text-neutral-200">
-              <use xlinkHref="codicon.svg#gear" />
+              <use xlinkHref="/codicon.svg#gear" />
             </svg>
           </div>
         </div>
@@ -137,7 +151,7 @@ export default function MainLayout({
               <div className="mr-2">
                 <div className="rounded w-[22px] h-[22px] hover:bg-white/10 cursor-pointer flex items-center justify-center">
                   <svg className="w-4 h-4 text-neutral-200">
-                    <use xlinkHref="codicon.svg#ellipsis" />
+                    <use xlinkHref="/codicon.svg#ellipsis" />
                   </svg>
                 </div>
               </div>
@@ -151,28 +165,51 @@ export default function MainLayout({
                 expanded
                 depth={0}
               >
+                {mainFiles.map((file) => (
+                  <File
+                    name={file.name}
+                    path={file.path}
+                    depth={1}
+                    key={file.id}
+                    active={file.id === activeItem}
+                    onClick={() => {
+                      setTabs((oldTabs) =>
+                        oldTabs.some((tab) => tab === file.id)
+                          ? oldTabs
+                          : [...oldTabs, file.id]
+                      );
+
+                      setActiveItem(file.id);
+
+                      if (document.body.clientWidth <= 600) {
+                        setActiveAction(null);
+                      }
+                    }}
+                  />
+                ))}
+
                 <Section
-                  name="Gustavo Toyota"
-                  active={activeItem === "Gustavo Toyota"}
-                  onClick={() => setActiveItem("Gustavo Toyota")}
+                  name="Blog"
+                  active={activeItem === "Blog"}
+                  onClick={() => setActiveItem("Blog")}
                   expanded
                   depth={1}
                 >
-                  {fileInfos.map((file) => (
+                  {blogPosts.map((post) => (
                     <File
-                      name={file.name}
-                      path={file.path}
+                      name={post.name}
+                      path={post.path}
                       depth={2}
-                      key={file.id}
-                      active={file.id === activeItem}
+                      key={post.id}
+                      active={post.id === activeItem}
                       onClick={() => {
-                        if (
-                          !tabsRef.current.some((tab) => tab.name === file.name)
-                        ) {
-                          setTabs((oldTabs) => [...oldTabs, { ...file }]);
-                        }
+                        setTabs((oldTabs) =>
+                          oldTabs.some((tab) => tab === post.id)
+                            ? oldTabs
+                            : [...oldTabs, post.id]
+                        );
 
-                        setActiveItem(file.id);
+                        setActiveItem(post.id);
 
                         if (document.body.clientWidth <= 600) {
                           setActiveAction(null);
@@ -198,7 +235,7 @@ export default function MainLayout({
                 onClick={() => setActiveItem("TIMELINE")}
                 depth={0}
               >
-                <div className="ml-3 mt-2">Tudo bem?</div>
+                <div className="ml-3 mt-2">Está procurando algo?</div>
               </Section>
             </div>
           </div>
@@ -208,19 +245,39 @@ export default function MainLayout({
 
         <div className="flex-1 flex flex-col w-0">
           <div className="flex overflow-x-auto overflow-y-hidden">
-            {tabs.map((tab) => (
-              <Tab
-                name={tab.name}
-                path={tab.path}
-                icon={tab.name === "Welcome" ? undefined : "code"}
-                onClose={async () => {
-                  setTabs((oldTabs) => oldTabs.filter((t) => t !== tab));
+            {tabs.map((tab) =>
+              (() => {
+                const file = allFiles.find((f) => f.id === tab);
 
-                  setActiveItem(tabsRef.current[0].id);
-                }}
-                key={tab.id}
-              />
-            ))}
+                if (file == null) {
+                  return;
+                }
+
+                return (
+                  <Tab
+                    name={file.name}
+                    path={file.path}
+                    icon={file.name === "Welcome" ? undefined : "code"}
+                    onClose={async () => {
+                      setTabs((oldTabs) => oldTabs.filter((t) => t !== tab));
+
+                      if (pathname === file.path) {
+                        setActiveItem(tabsRef.current[0]);
+
+                        const activeFile = allFiles.find(
+                          (f) => f.id === tabsRef.current[0]
+                        );
+
+                        if (activeFile != null) {
+                          await router.push(activeFile.path);
+                        }
+                      }
+                    }}
+                    key={file.id}
+                  />
+                );
+              })()
+            )}
 
             {/* Ellipsis */}
 
@@ -230,7 +287,7 @@ export default function MainLayout({
               <div className="mr-2">
                 <div className="rounded w-[22px] h-[22px] hover:bg-white/10 cursor-pointer flex items-center justify-center">
                   <svg className="w-4 h-4 text-neutral-200">
-                    <use xlinkHref="codicon.svg#ellipsis" />
+                    <use xlinkHref="/codicon.svg#ellipsis" />
                   </svg>
                 </div>
               </div>
@@ -251,19 +308,19 @@ export default function MainLayout({
       <div className="flex-none h-[23px] bg-[#181818] border-t border-t-white/10 flex select-none">
         <div className="w-[34px] bg-[#0078D4] flex items-center justify-center hover:brightness-110 cursor-pointer">
           <svg className="w-[14px] h-[14px]">
-            <use xlinkHref="codicon.svg#remote" />
+            <use xlinkHref="/codicon.svg#remote" />
           </svg>
         </div>
 
         <div className="ml-1 px-1 flex items-center text-xs hover:bg-white/10 cursor-pointer">
           <svg className="w-[14px] h-[14px] text-white/75">
-            <use xlinkHref="codicon.svg#error" />
+            <use xlinkHref="/codicon.svg#error" />
           </svg>
 
           <div className="ml-[2px] text-white/90">0</div>
 
           <svg className="ml-[2px] w-[14px] h-[14px] text-white/75">
-            <use xlinkHref="codicon.svg#warning" />
+            <use xlinkHref="/codicon.svg#warning" />
           </svg>
 
           <div className="ml-[2px] text-white/90">0</div>
@@ -277,13 +334,13 @@ export default function MainLayout({
 
         <div className="ml-2 px-1 flex items-center text-xs text-white/80 hover:bg-white/10 cursor-pointer">
           <svg className="w-[14px] h-[14px] text-white/85">
-            <use xlinkHref="codicon.svg#feedback" />
+            <use xlinkHref="/codicon.svg#feedback" />
           </svg>
         </div>
 
         <div className="mx-2 px-1 flex items-center text-xs text-white/80 hover:bg-white/10 cursor-pointer">
           <svg className="w-[14px] h-[14px] text-white/85">
-            <use xlinkHref="codicon.svg#bell" />
+            <use xlinkHref="/codicon.svg#bell" />
           </svg>
         </div>
       </div>

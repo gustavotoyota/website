@@ -13,7 +13,7 @@ export default function MiniButton(props: {
           props.active ? "text-white/90" : "text-white/60"
         } group-hover:text-white/90`}
       >
-        <use xlinkHref={`codicon.svg#${props.name}`} />
+        <use xlinkHref={`/codicon.svg#${props.name}`} />
       </svg>
 
       {props.active ? (

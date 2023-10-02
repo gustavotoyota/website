@@ -1,8 +1,11 @@
-"use client";
-
 /* eslint-disable react/no-children-prop */
 import { prepareMarkdown } from "@/misc/utils";
+import { Metadata } from "next";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+
+export const metadata: Metadata = {
+  title: "Competências - Gustavo Toyota",
+};
 
 export default function Competencias() {
   return (

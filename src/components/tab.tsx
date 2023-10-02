@@ -28,7 +28,7 @@ export default function Tab(props: {
       <div className="ml-2">
         {props.icon ? (
           <svg className="w-4 h-4 text-[#e37933]">
-            <use xlinkHref={`codicon.svg#${props.icon}`} />
+            <use xlinkHref={`/codicon.svg#${props.icon}`} />
           </svg>
         ) : (
           <Image src="/images/icon.png" alt="icon" width={16} height={16} />
@@ -51,7 +51,7 @@ export default function Tab(props: {
         }}
       >
         <svg className={`w-4 h-4 ${active ? "" : "text-neutral-400"}`}>
-          <use xlinkHref="codicon.svg#close" />
+          <use xlinkHref="/codicon.svg#close" />
         </svg>
       </div>
     </div>

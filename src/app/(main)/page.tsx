@@ -1,10 +1,13 @@
-"use client";
-
-import { fileInfos } from "@/misc/files";
+import { mainFiles } from "@/misc/files";
 /* eslint-disable react/no-children-prop */
 import { prepareMarkdown } from "@/misc/utils";
+import { Metadata } from "next";
 import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+
+export const metadata: Metadata = {
+  title: "Home - Gustavo Toyota",
+};
 
 export default function Home() {
   return (
@@ -28,7 +31,7 @@ export default function Home() {
       />
 
       <ul>
-        {fileInfos.map((file) => (
+        {mainFiles.map((file) => (
           <li key={file.name}>
             <Link href={file.path}>{file.name}</Link>
           </li>

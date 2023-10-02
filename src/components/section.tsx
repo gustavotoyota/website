@@ -29,7 +29,7 @@ export default function Section(props: {
       >
         <svg className="ml-[2px] w-4 h-4 text-neutral-200">
           <use
-            xlinkHref={`codicon.svg#${
+            xlinkHref={`/codicon.svg#${
               expanded ? "chevron-down" : "chevron-right"
             }`}
           />

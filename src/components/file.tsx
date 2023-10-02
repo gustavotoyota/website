@@ -11,7 +11,7 @@ export default function File(props: {
 
   return (
     <div
-      className={`flex items-center h-[22px] cursor-pointer hover:bg-white/10 border ${
+      className={`flex items-start py-[3px] cursor-pointer hover:bg-white/10 border ${
         props.active ? "border-[#0078d4] bg-white/10" : "border-transparent"
       }`}
       style={{ paddingLeft: `${6 + props.depth * 12}px` }}
@@ -22,10 +22,10 @@ export default function File(props: {
       }}
     >
       <svg className="w-4 h-4 text-[#e37933]">
-        <use xlinkHref="codicon.svg#code" />
+        <use xlinkHref="/codicon.svg#code" />
       </svg>
 
-      <div className="ml-1 text-[13px] text-[#cccccc]">{props.name}</div>
+      <div className="ml-1 text-[13px] text-[#cccccc] flex-1">{props.name}</div>
     </div>
   );
 }
