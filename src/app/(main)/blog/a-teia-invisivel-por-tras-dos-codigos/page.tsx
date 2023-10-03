@@ -19,15 +19,11 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
       <h1 style={{ marginTop: "0.67rem", marginBottom: "0" }}>
         A teia invisível por trás dos códigos
       </h1>
-
       <div className="h-4"></div>
-
       <div className="text-xs text-white/80">
         Gustavo Toyota - 3 de outubro de 2023
       </div>
-
       <div className="h-9"></div>
-
       <div className="max-w-[600px]">
         <Image
           src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/web.webp"
@@ -48,9 +44,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           (CC BY-NC 2.0)
         </div>
       </div>
-
       <div className="h-8"></div>
-
       <ReactMarkdown
         linkTarget={"_blank"}
         children={prepareMarkdown(`
@@ -63,7 +57,6 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           ## A teia na vida real
         `)}
       />
-
       <Image
         src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/unity.webp"
         width={400}
@@ -75,9 +68,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
       <div className="text-xs text-white/80">
         Logo da plataforma de desenvolvimento de jogos Unity
       </div>
-
       <div className="h-6"></div>
-
       <ReactMarkdown
         linkTarget={"_blank"}
         children={prepareMarkdown(`
@@ -90,7 +81,6 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           ## Dependência possui granularidade
         `)}
       />
-
       <Image
         src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/granularidade.webp"
         width={400}
@@ -102,9 +92,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
       <div className="text-xs text-white/80">
         Dependência entre módulos (DALL·E)
       </div>
-
       <div className="h-6"></div>
-
       <ReactMarkdown
         linkTarget={"_blank"}
         children={prepareMarkdown(`
@@ -127,7 +115,6 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           ## Mudanças e efeitos cascata
         `)}
       />
-
       <Image
         src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/domino.webp"
         width={450}
@@ -146,9 +133,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
         </a>{" "}
         (CC BY-NC 2.0)
       </div>
-
       <div className="h-8"></div>
-
       <ReactMarkdown
         linkTarget={"_blank"}
         children={prepareMarkdown(`
@@ -159,7 +144,6 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           ## Acoplamento e coesão
         `)}
       />
-
       <Image
         src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/tight-coupling.webp"
         width={400}
@@ -171,9 +155,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
       <div className="text-xs text-white/80">
         Representação visual de tight-coupling (DALL·E)
       </div>
-
       <div className="h-6"></div>
-
       <ReactMarkdown
         linkTarget={"_blank"}
         children={prepareMarkdown(`
@@ -188,7 +170,6 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           ## A Lei de Deméter
         `)}
       />
-
       <Image
         src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/demeter.webp"
         width={400}
@@ -200,9 +181,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
       <div className="text-xs text-white/80">
         Deméter, deusa da colheita e da agricultura (Wikimedia Commons)
       </div>
-
       <div className="h-6"></div>
-
       <ReactMarkdown
         linkTarget={"_blank"}
         children={prepareMarkdown(`
@@ -276,6 +255,14 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           A teia de dependências desempenha um papel crucial no desenvolvimento de software, ditando muitas das decisões tomadas ao longo do processo. À medida que o software cresce em complexidade e tamanho, a importância de compreender e gerenciar essas dependências torna-se ainda mais evidente. Portanto, é fundamental compreender o seu funcionamento para garantir a construção de um software de alta qualidade.
         `)}
       />
+
+      <div className="h-10"></div>
+
+      <div>Se você gostou deste artigo, compartilhe com seus colegas!</div>
+      <div>
+        Em caso de dúvidas ou sugestões, entre em contato comigo pelo e-mail
+        abaixo.
+      </div>
 
       <div className="h-10"></div>
 
