@@ -72,7 +72,9 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
       <ReactMarkdown
         linkTarget={"_blank"}
         children={prepareMarkdown(`
-          Recentemente, saíram notícias de que a plataforma de desenvolvimento de jogos Unity iria alterar sua política de taxas sobre seus usuários, introduzindo uma cobrança baseada no número de instalações dos jogos desenvolvidos por meio da plataforma.
+          A teia de dependências não existe somente dentro dos códigos.
+
+          Recentemente, por exemplo, saíram notícias de que a plataforma de desenvolvimento de jogos Unity iria alterar sua política de taxas sobre seus usuários, introduzindo uma cobrança baseada no número de instalações dos jogos desenvolvidos por meio da plataforma.
           
           Inúmeros desenvolvedores dependem dessa plataforma para desenvolverem seus jogos. Muitos deles estão tão atrelados à plataforma que seria muito difícil migrar para plataformas concorrentes como Godot ou Unreal Engine. Muitos desenvolvedores de jogos seriam afetados e até mesmo poderiam falir devido a essa nova taxa.
           
@@ -106,7 +108,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           
           ## Dependência possui consequências
           
-          Estamos tão acostumados em ver a palavra "dependência" no desenvolvimento de software, que dá a impressão de ser um simples plugin que você pode conectar e utilizar sem problemas.
+          Estamos tão acostumados em ver a palavra "dependência" no desenvolvimento de software, que dá a impressão de ser um simples plugin que você pode conectar e sair utilizando sem mais problemas.
           
           No entanto, existe um grande peso por trás dessa palavra.
           
@@ -139,7 +141,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
         children={prepareMarkdown(`
           Imagine que um módulo A depende de algumas características de um módulo B. Caso uma das características de B das quais A depende mude, A ficaria instável, e precisaria ser modificado para refletir a nova característica de B. Essa característica pode ser tão simples quanto o nome utilizado para se referir a B. Eu costumo chamar esse fenômeno de **transferência de instabilidade**.
           
-          Perceba que isso pode provocar um efeito cascata: se ao corrigir essa instabilidade A modifica uma das suas características da qual outro módulo C depende, C também ficaria instável. É como se um castelo tivesse sido construído sobre a areia: se a fundação é instável, o que depende dela também é. Também lembra um pouco a fala "uma corrente é tão forte quanto seu elo mais fraco", porém, em desenvolvimento de software, os elos são geralmente unidirecionais.
+          Perceba que isso pode provocar um efeito cascata: se ao corrigir essa instabilidade A modifica uma das suas características da qual outro módulo C depende, C também ficaria instável. É como se um castelo tivesse sido construído sobre a areia: se a fundação é instável, o que depende dela também é.
           
           ## Acoplamento e coesão
         `)}
