@@ -252,7 +252,7 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           
           ## Conclusão
 
-          Quando for introduzir uma dependência em seu código, avalie cuidadosamente a sua confiabilidade e estabilidade, seja ela um serviço, uma biblioteca ou até mesmo uma simples variável. Evite depender de características desnecessárias, mantendo seu código atrelado apenas a detalhes essenciais. Evite, sobretudo, usar características de dependências não explicitamente declaradas. Essas dicas são especialmente aplicáveis quando a dependência é desenvolvida internamente pela sua equipe ou por você mesmo.
+          Quando for introduzir uma dependência em seu código, avalie cuidadosamente a sua confiabilidade e estabilidade, seja ela um serviço, uma biblioteca ou até mesmo uma simples variável. Evite depender de características desnecessárias, mantendo seu código atrelado apenas a detalhes essenciais. Essas dicas são especialmente aplicáveis quando a dependência é desenvolvida internamente pela sua equipe ou por você mesmo.
 
           A teia de dependências desempenha um papel crucial no desenvolvimento de software, ditando muitas das decisões tomadas ao longo do processo. À medida que o software cresce em complexidade e tamanho, a importância de compreender e gerenciar essas dependências torna-se ainda mais evidente. Portanto, é fundamental compreender o seu funcionamento para garantir a construção de um software de alta qualidade.
         `)}
