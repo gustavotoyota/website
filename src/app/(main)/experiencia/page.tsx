@@ -36,15 +36,15 @@ export default function Experiencia() {
       <Gallery
         images={[
           {
-            src: "/images/pausa/20210425_123058.jpg",
+            src: "/images/experiencia/pausa/20210425_123058.jpg",
             alt: "Família",
           },
           {
-            src: "/images/pausa/20210810_181936.jpg",
+            src: "/images/experiencia/pausa/20210810_181936.jpg",
             alt: "Eu e a Lili",
           },
           {
-            src: "/images/pausa/IMG_20220109_151915.jpg",
+            src: "/images/experiencia/pausa/IMG_20220109_151915.jpg",
             alt: "Lili",
           },
         ]}
@@ -65,43 +65,43 @@ export default function Experiencia() {
       <Gallery
         images={[
           {
-            src: "/images/cielo/efetivado/69179151_2912053682154595_6234392905591554048_n.jpg",
+            src: "/images/experiencia/cielo/efetivado/69179151_2912053682154595_6234392905591554048_n.jpg",
             alt: "Evento Cielo Xperts",
           },
           {
-            src: "/images/cielo/efetivado/70057899_2893862317309656_524479703717773312_n.jpg",
+            src: "/images/experiencia/cielo/efetivado/70057899_2893862317309656_524479703717773312_n.jpg",
             alt: "Evento Cielo Xperts",
           },
           {
-            src: "/images/cielo/efetivado/71323576_2543141045731560_6758552342187999232_n.jpg",
+            src: "/images/experiencia/cielo/efetivado/71323576_2543141045731560_6758552342187999232_n.jpg",
             alt: "",
           },
           {
-            src: "/images/cielo/efetivado/black-friday.jpg",
+            src: "/images/experiencia/cielo/efetivado/black-friday.jpg",
             alt: "Black Friday",
           },
           {
-            src: "/images/cielo/efetivado/82431514_2767329983312664_7332104924890660864_n.jpg",
+            src: "/images/experiencia/cielo/efetivado/82431514_2767329983312664_7332104924890660864_n.jpg",
             alt: "Prêmio de reconhecimento",
           },
           {
-            src: "/images/cielo/efetivado/48390639_1995490190527570_8309467214616985600_n.jpg",
+            src: "/images/experiencia/cielo/efetivado/48390639_1995490190527570_8309467214616985600_n.jpg",
             alt: "",
           },
           {
-            src: "/images/cielo/efetivado/55924232_2628410633852236_355297282616197120_n.jpg",
+            src: "/images/experiencia/cielo/efetivado/55924232_2628410633852236_355297282616197120_n.jpg",
             alt: "",
           },
           {
-            src: "/images/cielo/efetivado/57032266_2222064521222120_4861725893275418624_n.jpg",
+            src: "/images/experiencia/cielo/efetivado/57032266_2222064521222120_4861725893275418624_n.jpg",
             alt: "Amigo secreto",
           },
           {
-            src: "/images/cielo/efetivado/57096965_2526673200688111_7267745063298400256_n.jpg",
+            src: "/images/experiencia/cielo/efetivado/57096965_2526673200688111_7267745063298400256_n.jpg",
             alt: "Amigo secreto",
           },
           {
-            src: "/images/cielo/efetivado/57674247_2526673137354784_7068108828692185088_n.jpg",
+            src: "/images/experiencia/cielo/efetivado/57674247_2526673137354784_7068108828692185088_n.jpg",
             alt: "Amigo secreto",
           },
         ]}
@@ -122,11 +122,11 @@ export default function Experiencia() {
       <Gallery
         images={[
           {
-            src: "/images/cielo/estagio/59996094_10217013363318004_1319563113250422784_n.jpg",
+            src: "/images/experiencia/cielo/estagio/59996094_10217013363318004_1319563113250422784_n.jpg",
             alt: "Aniversário da chefe",
           },
           {
-            src: "/images/cielo/estagio/Crachá.jpg",
+            src: "/images/experiencia/cielo/estagio/Crachá.jpg",
             alt: "Crachá",
           },
         ]}
@@ -150,63 +150,63 @@ export default function Experiencia() {
       <Gallery
         images={[
           {
-            src: "/images/ufscar/IMG_20200213_140429178.jpg",
+            src: "/images/experiencia/ufscar/IMG_20200213_140429178.jpg",
             alt: "Formatura - UFSCar",
           },
           {
-            src: "/images/ufscar/IMG_20200213_131336314.jpg",
+            src: "/images/experiencia/ufscar/IMG_20200213_131336314.jpg",
             alt: "Formatura - UFSCar",
           },
           {
-            src: "/images/ufscar/2º-lugar-O-Sorrateiro-Tigre-Colorido.jpg",
+            src: "/images/experiencia/ufscar/2º-lugar-O-Sorrateiro-Tigre-Colorido.jpg",
             alt: "2º lugar na maratona - O Sorrateiro Tigre Colorido",
           },
           {
-            src: "/images/ufscar/Durante-maratona-O-Sorrateiro-Tigre-Colorido.jpg",
+            src: "/images/experiencia/ufscar/Durante-maratona-O-Sorrateiro-Tigre-Colorido.jpg",
             alt: "Durante a maratona - O Sorrateiro Tigre Colorido",
           },
           {
-            src: "/images/ufscar/O-Sorrateiro-Tigre-Colorido.jpg",
+            src: "/images/experiencia/ufscar/O-Sorrateiro-Tigre-Colorido.jpg",
             alt: "Antes da maratona - O Sorrateiro Tigre Colorido",
           },
           {
-            src: "/images/ufscar/SeCoT-2017.jpg",
+            src: "/images/experiencia/ufscar/SeCoT-2017.jpg",
             alt: "SeCoT 2017",
           },
           {
-            src: "/images/ufscar/Último-dia-SeCoT-2017.jpg",
+            src: "/images/experiencia/ufscar/Último-dia-SeCoT-2017.jpg",
             alt: "Último dia - SeCoT 2017",
           },
           {
-            src: "/images/ufscar/Intervalo-SeCoT-2017.jpg",
+            src: "/images/experiencia/ufscar/Intervalo-SeCoT-2017.jpg",
             alt: "Intervalo - SeCoT 2017",
           },
           {
-            src: "/images/ufscar/Símbolo-SeCoT-2016.jpg",
+            src: "/images/experiencia/ufscar/Símbolo-SeCoT-2016.jpg",
             alt: "Símbolo - SeCoT 2016",
           },
           {
-            src: "/images/ufscar/SeCoT-2016.jpg",
+            src: "/images/experiencia/ufscar/SeCoT-2016.jpg",
             alt: "SeCoT 2016",
           },
           {
-            src: "/images/ufscar/SeCoT-2015.jpg",
+            src: "/images/experiencia/ufscar/SeCoT-2015.jpg",
             alt: "SeCoT 2015",
           },
           {
-            src: "/images/ufscar/segundo-lugar-na-maratona-da-UFScar.jpg",
+            src: "/images/experiencia/ufscar/segundo-lugar-na-maratona-da-UFScar.jpg",
             alt: "2º lugar na maratona - Baloes++;",
           },
           {
-            src: "/images/ufscar/Visita-à-UOL.jpg",
+            src: "/images/experiencia/ufscar/Visita-à-UOL.jpg",
             alt: "Visita à UOL",
           },
           {
-            src: "/images/ufscar/Amigos-Pizzaria.jpg",
+            src: "/images/experiencia/ufscar/Amigos-Pizzaria.jpg",
             alt: "Amigos - Pizzaria",
           },
           {
-            src: "/images/ufscar/Amigos-Jirenaton-House.jpg",
+            src: "/images/experiencia/ufscar/Amigos-Jirenaton-House.jpg",
             alt: "Amigos - Jirenaton House",
           },
         ]}
@@ -228,11 +228,11 @@ export default function Experiencia() {
       <Gallery
         images={[
           {
-            src: "/images/infancia/SDC10189.JPG",
+            src: "/images/experiencia/infancia/SDC10189.JPG",
             alt: "Ta olhando o quê?",
           },
           {
-            src: "/images/infancia/0ff03cf1f06ca12d73d82bf1e4b00edb1.webp",
+            src: "/images/experiencia/infancia/0ff03cf1f06ca12d73d82bf1e4b00edb1.webp",
             alt: "Hmmm...",
           },
         ]}

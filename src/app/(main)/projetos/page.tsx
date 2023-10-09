@@ -3,6 +3,24 @@ import { prepareMarkdown } from "@/misc/utils";
 import ReactMarkdown from "react-markdown";
 import { Gallery } from "../../../components/gallery";
 import { Metadata } from "next";
+import MineDelverScreenshot1 from "@/../public/images/projects/minedelver/screenshot-1.png";
+import MineDelverScreenshot2 from "@/../public/images/projects/minedelver/screenshot-2.png";
+import MineDelverScreenshot3 from "@/../public/images/projects/minedelver/screenshot-3.png";
+import ChessAnalyzerScreenshot from "@/../public/images/projects/chessanalyzer/chessanalyzer.png";
+import WebsiteExperienciaScreenshot from "@/../public/images/projects/website/experiencia.png";
+import DeepNotesDiagrama from "@/../public/images/projects/deepnotes/whitepaper.png";
+import DeepNotesGaleria from "@/../public/images/projects/deepnotes/link-gallery.png";
+import DeepNotesKanban from "@/../public/images/projects/deepnotes/kanban.png";
+import DeepNotesKanban2 from "@/../public/images/projects/deepnotes/kanban-2.png";
+import DeepNotesHistoria from "@/../public/images/projects/deepnotes/historia.png";
+import DeepNotesRedesNeurais from "@/../public/images/projects/deepnotes/neural-networks.png";
+import DeepNotesTypescript from "@/../public/images/projects/deepnotes/typescript.png";
+import DeepNotesArvoreGenealogica from "@/../public/images/projects/deepnotes/familia-real.png";
+import DeepNotesDiagrama2 from "@/../public/images/projects/deepnotes/key-hierarchy.png";
+import DeepNotesDiagrama3 from "@/../public/images/projects/deepnotes/authentication.png";
+import VisualSQLQuery1 from "@/../public/images/projects/visualsql/exemplo-1.png";
+import VisualSQLQuery2 from "@/../public/images/projects/visualsql/exemplo-2.png";
+import VisualSQLQuery3 from "@/../public/images/projects/visualsql/exemplo-3.png";
 
 export const metadata: Metadata = {
   title: "Projetos pessoais - Gustavo Toyota",
@@ -20,7 +38,42 @@ export default function Projetos() {
           # Projetos pessoais
 
           ---
+        `)}
+      />
 
+      <ReactMarkdown
+        linkTarget={"_blank"}
+        children={prepareMarkdown(`
+          &nbsp;
+    
+          \`2023\` - **[MineDelver.com](https://minedelver.com/)** - Jogo de campo minado infinito com elementos de RPG
+          - Desenvolvido com Quasar (Vue 3 + Typescript).
+          - Repositório GitHub: [https://github.com/gustavotoyota/MineDelver](https://github.com/gustavotoyota/MineDelver)
+        `)}
+      />
+
+      <Gallery
+        images={[
+          {
+            src: MineDelverScreenshot1,
+            alt: "Screenshot 1",
+          },
+          {
+            src: MineDelverScreenshot2,
+            alt: "Screenshot 2",
+          },
+          {
+            src: MineDelverScreenshot3,
+            alt: "Screenshot 3",
+          },
+        ]}
+      />
+
+      <ReactMarkdown
+        linkTarget={"_blank"}
+        children={prepareMarkdown(`
+          &nbsp;
+    
           \`2023\` - **[ChessAnalyzer](https://chessanalyzer.gustavotoyota.dev/)** - Ferramenta de análise de posições de xadrez
           - Desenvolvido com Next.js (React + Typescript), TailwindCSS e Stockfish 16.
           - Repositório GitHub: [https://github.com/gustavotoyota/ChessAnalyzer](https://github.com/gustavotoyota/ChessAnalyzer)
@@ -30,7 +83,7 @@ export default function Projetos() {
       <Gallery
         images={[
           {
-            src: "/images/chessanalyzer/chessanalyzer.png",
+            src: ChessAnalyzerScreenshot,
             alt: "Screenshot",
           },
         ]}
@@ -51,7 +104,7 @@ export default function Projetos() {
       <Gallery
         images={[
           {
-            src: "/images/website/experiencia.png",
+            src: WebsiteExperienciaScreenshot,
             alt: "Screenshot",
           },
         ]}
@@ -75,43 +128,43 @@ export default function Projetos() {
       <Gallery
         images={[
           {
-            src: "/images/deepnotes/whitepaper.png",
+            src: DeepNotesDiagrama,
             alt: "Exemplo de diagrama",
           },
           {
-            src: "/images/deepnotes/link-gallery.png",
+            src: DeepNotesGaleria,
             alt: "Galeria de links",
           },
           {
-            src: "/images/deepnotes/kanban.png",
+            src: DeepNotesKanban,
             alt: "Exemplo de kanban",
           },
           {
-            src: "/images/deepnotes/kanban-2.png",
+            src: DeepNotesKanban2,
             alt: "Exemplo de kanban",
           },
           {
-            src: "/images/deepnotes/historia.png",
+            src: DeepNotesHistoria,
             alt: "Estudo de história",
           },
           {
-            src: "/images/deepnotes/neural-networks.png",
+            src: DeepNotesRedesNeurais,
             alt: "Estudo de redes neurais",
           },
           {
-            src: "/images/deepnotes/typescript.png",
+            src: DeepNotesTypescript,
             alt: "Estudo de Typescript",
           },
           {
-            src: "/images/deepnotes/familia-real.png",
+            src: DeepNotesArvoreGenealogica,
             alt: "Árvore genealógica",
           },
           {
-            src: "/images/deepnotes/key-hierarchy.png",
+            src: DeepNotesDiagrama2,
             alt: "Exemplo de diagrama",
           },
           {
-            src: "/images/deepnotes/authentication.png",
+            src: DeepNotesDiagrama3,
             alt: "Exemplo de diagrama",
           },
         ]}
@@ -140,15 +193,15 @@ export default function Projetos() {
       <Gallery
         images={[
           {
-            src: "/images/visualsql/exemplo-1.png",
+            src: VisualSQLQuery1,
             alt: "Exemplo de query",
           },
           {
-            src: "/images/visualsql/exemplo-2.png",
+            src: VisualSQLQuery2,
             alt: "Exemplo de query",
           },
           {
-            src: "/images/visualsql/exemplo-3.png",
+            src: VisualSQLQuery3,
             alt: "Exemplo de query",
           },
         ]}

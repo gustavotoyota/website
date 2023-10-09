@@ -2,9 +2,11 @@
 
 import { useEventListener } from "@/hooks/use-event";
 import useStateWithRef from "@/hooks/use-state-with-ref";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-export function Gallery(props: { images: { src: string; alt: string }[] }) {
+export function Gallery(props: {
+  images: { src: string | StaticImageData; alt: string }[];
+}) {
   const [currentImageIdx, setCurrentImageIdx, currentImageIdxRef] =
     useStateWithRef<number | null>(() => null);
 
@@ -53,7 +55,7 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
 
       {currentImageIdx != null ? (
         <div className="fixed inset-0 bg-black select-none flex flex-col">
-          <div className="flex-1 relative">
+          <div className="flex-1 h-0 relative">
             {/* Current image */}
 
             <Image
@@ -61,8 +63,9 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
               src={props.images[currentImageIdx].src}
               alt={props.images[currentImageIdx].alt}
               title={props.images[currentImageIdx].alt}
-              fill={true}
-              className="bg-black object-contain"
+              className="bg-black absolute left-1/2 top-1/2 -translate-x-1/2  -translate-y-1/2 max-w-full max-h-full object-contain"
+              fill={typeof props.images[currentImageIdx].src === "string"}
+              style={{ inset: "" }}
               draggable={false}
             />
 
@@ -73,7 +76,7 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
                 key={nextImageIdx}
                 src={props.images[nextImageIdx].src}
                 alt={props.images[nextImageIdx].alt}
-                fill={true}
+                fill={typeof props.images[nextImageIdx].src === "string"}
                 className="invisible"
               />
             ) : null}
@@ -85,7 +88,7 @@ export function Gallery(props: { images: { src: string; alt: string }[] }) {
                 key={prevImageIdx}
                 src={props.images[prevImageIdx].src}
                 alt={props.images[prevImageIdx].alt}
-                fill={true}
+                fill={typeof props.images[prevImageIdx].src === "string"}
                 className="invisible"
               />
             ) : null}
