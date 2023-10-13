@@ -229,11 +229,9 @@ export default function Experiencia() {
         images={[
           {
             src: "/images/experiencia/infancia/SDC10189.JPG",
-            alt: "Ta olhando o quê?",
           },
           {
             src: "/images/experiencia/infancia/0ff03cf1f06ca12d73d82bf1e4b00edb1.webp",
-            alt: "Hmmm...",
           },
         ]}
       />
