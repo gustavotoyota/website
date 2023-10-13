@@ -45,75 +45,6 @@ export default function Projetos() {
         linkTarget={"_blank"}
         children={prepareMarkdown(`
           &nbsp;
-    
-          \`2023\` - **[MineDelver.com](https://minedelver.com/)** - Jogo de campo minado infinito com elementos de RPG
-          - Desenvolvido com Quasar (Vue 3 + Typescript).
-          - Repositório GitHub: [https://github.com/gustavotoyota/MineDelver](https://github.com/gustavotoyota/MineDelver)
-        `)}
-      />
-
-      <Gallery
-        images={[
-          {
-            src: MineDelverScreenshot1,
-            alt: "Screenshot 1",
-          },
-          {
-            src: MineDelverScreenshot2,
-            alt: "Screenshot 2",
-          },
-          {
-            src: MineDelverScreenshot3,
-            alt: "Screenshot 3",
-          },
-        ]}
-      />
-
-      <ReactMarkdown
-        linkTarget={"_blank"}
-        children={prepareMarkdown(`
-          &nbsp;
-    
-          \`2023\` - **[ChessAnalyzer](https://chessanalyzer.gustavotoyota.dev/)** - Ferramenta de análise de posições de xadrez
-          - Desenvolvido com Next.js (React + Typescript), TailwindCSS e Stockfish 16.
-          - Repositório GitHub: [https://github.com/gustavotoyota/ChessAnalyzer](https://github.com/gustavotoyota/ChessAnalyzer)
-        `)}
-      />
-
-      <Gallery
-        images={[
-          {
-            src: ChessAnalyzerScreenshot,
-            alt: "Screenshot",
-          },
-        ]}
-      />
-
-      <ReactMarkdown
-        linkTarget={"_blank"}
-        children={prepareMarkdown(`
-          &nbsp;
-
-          \`2023\` - **[GustavoToyota.dev](https://gustavotoyota.dev/)** - Site pessoal
-          - Site pessoal para portifólio, entre outros.
-          - Desenvolvido com Next.js (React + Typescript) e TailwindCSS.
-          - Repositório GitHub: [https://github.com/gustavotoyota/website](https://github.com/gustavotoyota/website)
-        `)}
-      />
-
-      <Gallery
-        images={[
-          {
-            src: WebsiteExperienciaScreenshot,
-            alt: "Screenshot",
-          },
-        ]}
-      />
-
-      <ReactMarkdown
-        linkTarget={"_blank"}
-        children={prepareMarkdown(`
-          &nbsp;
 
           \`2022\` - **[DeepNotes.app](https://deepnotes.app/)** - The next level of note-taking
           - Aplicativo de anotações visuais com profundidade ilimitada.
@@ -175,14 +106,6 @@ export default function Projetos() {
         children={prepareMarkdown(`
           &nbsp;
 
-          \`2022\` - **[UniLogr](https://www.npmjs.com/package/unilogr)** - Universal Logger
-          - UniLogr é um logger que suporta ambos Node.js e browser.
-          - Inspirado no [Winston](https://www.npmjs.com/package/winston).
-          - Desenvolvido com Typescript.
-          - Repositório GitHub: [https://github.com/gustavotoyota/unilogr](https://github.com/gustavotoyota/unilogr)
-
-          &nbsp;
-
           \`2021\` - **[VisualSQL.net](https://visualsql.net/)** - Construtor visual de queries SQL
           - Inspirado em SAS.
           - Desenvolvido com Nuxt 2 (Vue 2 + Typescript).
@@ -203,6 +126,75 @@ export default function Projetos() {
           {
             src: VisualSQLQuery3,
             alt: "Exemplo de query",
+          },
+        ]}
+      />
+
+      <ReactMarkdown
+        linkTarget={"_blank"}
+        children={prepareMarkdown(`
+          &nbsp;
+    
+          \`2023\` - **[MineDelver.com](https://minedelver.com/)** - Jogo de campo minado infinito com elementos de RPG
+          - Desenvolvido com Quasar (Vue 3 + Typescript).
+          - Repositório GitHub: [https://github.com/gustavotoyota/MineDelver](https://github.com/gustavotoyota/MineDelver)
+        `)}
+      />
+
+      <Gallery
+        images={[
+          {
+            src: MineDelverScreenshot1,
+            alt: "Screenshot 1",
+          },
+          {
+            src: MineDelverScreenshot2,
+            alt: "Screenshot 2",
+          },
+          {
+            src: MineDelverScreenshot3,
+            alt: "Screenshot 3",
+          },
+        ]}
+      />
+
+      <ReactMarkdown
+        linkTarget={"_blank"}
+        children={prepareMarkdown(`
+          &nbsp;
+    
+          \`2023\` - **[ChessAnalyzer](https://chessanalyzer.gustavotoyota.dev/)** - Ferramenta de análise de posições de xadrez
+          - Desenvolvido com Next.js (React + Typescript), TailwindCSS e Stockfish 16.
+          - Repositório GitHub: [https://github.com/gustavotoyota/ChessAnalyzer](https://github.com/gustavotoyota/ChessAnalyzer)
+        `)}
+      />
+
+      <Gallery
+        images={[
+          {
+            src: ChessAnalyzerScreenshot,
+            alt: "Screenshot",
+          },
+        ]}
+      />
+
+      <ReactMarkdown
+        linkTarget={"_blank"}
+        children={prepareMarkdown(`
+          &nbsp;
+
+          \`2023\` - **[GustavoToyota.dev](https://gustavotoyota.dev/)** - Site pessoal
+          - Site pessoal para portifólio, entre outros.
+          - Desenvolvido com Next.js (React + Typescript) e TailwindCSS.
+          - Repositório GitHub: [https://github.com/gustavotoyota/website](https://github.com/gustavotoyota/website)
+        `)}
+      />
+
+      <Gallery
+        images={[
+          {
+            src: WebsiteExperienciaScreenshot,
+            alt: "Screenshot",
           },
         ]}
       />
