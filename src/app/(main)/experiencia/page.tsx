@@ -30,7 +30,6 @@ export default function Experiencia() {
         <li>
           Mais informações em: <Link href="/projetos">projetos.html</Link>
         </li>
-        <li>Foco em Typescript.</li>
       </ul>
 
       <Gallery
