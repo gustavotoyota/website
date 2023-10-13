@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div
-      className="px-5 py-1"
+      className="px-5 py-1 w-[600px]"
       style={{ fontSize: "1rem", lineHeight: "1.5rem" }}
     >
       <ReactMarkdown
@@ -22,7 +22,10 @@ export default function Home() {
 
           ![Bem-vindo(a)!](/images/welcome.png "Sorrindo com o prêmio que ganhei no bingo")
 
-          Bem-vindo(a) ao meu site pessoal! \\
+          Olá! Meu nome é Gustavo Toyota.
+
+          Sou um desenvolvedor de software interessado em extrair o máximo de poder da simplicidade, transformando códigos complexos em soluções elegantes e eficientes.
+          
           Aqui você pode encontrar informações sobre mim, meus projetos e minhas experiências.
 
           Navegue utilizando as abas acima ou o menu lateral esquerdo.
