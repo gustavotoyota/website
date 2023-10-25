@@ -124,10 +124,6 @@ export default function Experiencia() {
             src: "/images/experiencia/cielo/estagio/59996094_10217013363318004_1319563113250422784_n.jpg",
             alt: "Aniversário da chefe",
           },
-          {
-            src: "/images/experiencia/cielo/estagio/Crachá.jpg",
-            alt: "Crachá",
-          },
         ]}
       />
 
