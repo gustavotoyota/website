@@ -113,7 +113,7 @@ export default function Experiencia() {
 
           \`2019\` - [Cielo](https://www.cielo.com.br/) - **Estagiário** - \`23 anos\`
 
-          - Automação de sistemas legados.
+          - Automação de sistemas e processos internos.
           - Utilização de C#, VBA, SQL, HTML, CSS e Javascript.
           `)}
       />
