@@ -12,10 +12,7 @@ export const metadata: Metadata = {
 
 export default function ATeiaInvisivelPorTrasDosCodigos() {
   return (
-    <div
-      className="blog-post p-5 max-w-3xl"
-      style={{ fontSize: "1rem", lineHeight: "1.5rem" }}
-    >
+    <div className="blog-post p-5 max-w-3xl" style={{ fontSize: "1rem" }}>
       <h1 style={{ marginTop: "0.67rem", marginBottom: "0" }}>
         A teia invisível por trás dos códigos
       </h1>
@@ -24,30 +21,31 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
         Gustavo Toyota - 3 de outubro de 2023
       </div>
       <div className="h-9"></div>
-      <div className="max-w-[600px]">
-        <Image
-          src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/web.webp"
-          width={600}
-          height={400}
-          alt="Tangled spider web"
-          style={{ width: "100%", height: "auto" }}
-        />
 
-        <div className="text-xs text-white/80">
-          Imagem de{" "}
-          <a
-            href="https://www.flickr.com/photos/mollivan_jon/6681834037"
-            target="_blank"
-          >
-            Jon Sullivan
-          </a>{" "}
-          (CC BY-NC 2.0)
+      <div style={{ lineHeight: "1.5rem" }}>
+        <div className="max-w-[600px]">
+          <Image
+            src="/blog/a-teia-invisivel-por-tras-dos-codigos/web.webp"
+            width={600}
+            height={400}
+            alt="Tangled spider web"
+            style={{ width: "100%", height: "auto" }}
+          />
+          <div className="text-xs text-white/80">
+            Imagem de{" "}
+            <a
+              href="https://www.flickr.com/photos/mollivan_jon/6681834037"
+              target="_blank"
+            >
+              Jon Sullivan
+            </a>{" "}
+            (CC BY-NC 2.0)
+          </div>
         </div>
-      </div>
-      <div className="h-8"></div>
-      <ReactMarkdown
-        linkTarget={"_blank"}
-        children={prepareMarkdown(`
+        <div className="h-8"></div>
+        <ReactMarkdown
+          linkTarget={"_blank"}
+          children={prepareMarkdown(`
           No desenvolvimento de um software, à medida que o código vai tomando forma, uma teia invisível vai se formando por trás dele. Isso ocorre independentemente da linguagem ou tecnologia utilizada.
           
           É possível desenvolver grande parte de um software sem perceber sua existência. No entanto, mais cedo ou mais tarde, ela começará a afetar a qualidade do código e a atormentar o desenvolvedor, até que ele busque entender mais sobre sua natureza.
@@ -56,22 +54,22 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
 
           ## A teia na vida real
         `)}
-      />
-      <Image
-        src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/unity.webp"
-        width={400}
-        height={0}
-        alt="Logo da plataforma de desenvolvimento de jogos Unity"
-        className="max-w-full"
-        style={{ width: "100%", height: "auto", maxWidth: "400px" }}
-      />
-      <div className="text-xs text-white/80">
-        Logo da plataforma de desenvolvimento de jogos Unity
-      </div>
-      <div className="h-6"></div>
-      <ReactMarkdown
-        linkTarget={"_blank"}
-        children={prepareMarkdown(`
+        />
+        <Image
+          src="/blog/a-teia-invisivel-por-tras-dos-codigos/unity.webp"
+          width={400}
+          height={0}
+          alt="Logo da plataforma de desenvolvimento de jogos Unity"
+          className="max-w-full"
+          style={{ width: "100%", height: "auto", maxWidth: "400px" }}
+        />
+        <div className="text-xs text-white/80">
+          Logo da plataforma de desenvolvimento de jogos Unity
+        </div>
+        <div className="h-6"></div>
+        <ReactMarkdown
+          linkTarget={"_blank"}
+          children={prepareMarkdown(`
           A teia de dependências não existe somente dentro dos códigos.
 
           Recentemente, por exemplo, saíram notícias de que a plataforma de desenvolvimento de jogos Unity iria alterar sua política de taxas sobre seus usuários, introduzindo uma cobrança baseada no número de instalações dos jogos desenvolvidos por meio da plataforma.
@@ -82,22 +80,22 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           
           ## Dependência possui granularidade
         `)}
-      />
-      <Image
-        src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/granularidade.webp"
-        width={400}
-        height={0}
-        alt="Dependência entre módulos"
-        className="max-w-full"
-        style={{ width: "100%", height: "auto", maxWidth: "400px" }}
-      />
-      <div className="text-xs text-white/80">
-        Dependência entre módulos (DALL·E)
-      </div>
-      <div className="h-6"></div>
-      <ReactMarkdown
-        linkTarget={"_blank"}
-        children={prepareMarkdown(`
+        />
+        <Image
+          src="/blog/a-teia-invisivel-por-tras-dos-codigos/granularidade.webp"
+          width={400}
+          height={0}
+          alt="Dependência entre módulos"
+          className="max-w-full"
+          style={{ width: "100%", height: "auto", maxWidth: "400px" }}
+        />
+        <div className="text-xs text-white/80">
+          Dependência entre módulos (DALL·E)
+        </div>
+        <div className="h-6"></div>
+        <ReactMarkdown
+          linkTarget={"_blank"}
+          children={prepareMarkdown(`
           Quando falamos que um objeto depende de outro, ele não depende exatamente do outro objeto. Existe uma granularidade por baixo dessa expressão.
           
           Um objeto depende de **características específicas de outro objeto**.
@@ -116,51 +114,51 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           
           ## Mudanças e efeitos cascata
         `)}
-      />
-      <Image
-        src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/domino.webp"
-        width={450}
-        height={0}
-        alt="Dominós caindo em efeito cascata"
-        className="max-w-full"
-        style={{ width: "100%", height: "auto", maxWidth: "450px" }}
-      />
-      <div className="text-xs text-white/80">
-        Imagem de{" "}
-        <a
-          href="https://www.flickr.com/photos/testlab/21496317363"
-          target="_blank"
-        >
-          Kurt:S
-        </a>{" "}
-        (CC BY-NC 2.0)
-      </div>
-      <div className="h-8"></div>
-      <ReactMarkdown
-        linkTarget={"_blank"}
-        children={prepareMarkdown(`
+        />
+        <Image
+          src="/blog/a-teia-invisivel-por-tras-dos-codigos/domino.webp"
+          width={450}
+          height={0}
+          alt="Dominós caindo em efeito cascata"
+          className="max-w-full"
+          style={{ width: "100%", height: "auto", maxWidth: "450px" }}
+        />
+        <div className="text-xs text-white/80">
+          Imagem de{" "}
+          <a
+            href="https://www.flickr.com/photos/testlab/21496317363"
+            target="_blank"
+          >
+            Kurt:S
+          </a>{" "}
+          (CC BY-NC 2.0)
+        </div>
+        <div className="h-8"></div>
+        <ReactMarkdown
+          linkTarget={"_blank"}
+          children={prepareMarkdown(`
           Imagine que um módulo A depende de algumas características de um módulo B. Caso uma das características de B das quais A depende mude, A ficaria instável, e precisaria ser modificado para refletir a nova característica de B. Essa característica pode ser tão simples quanto o nome utilizado para se referir a B. Eu costumo chamar esse fenômeno de **transferência de instabilidade**.
           
           Perceba que isso pode provocar um efeito cascata: se ao corrigir essa instabilidade A modifica uma das suas características da qual outro módulo C depende, C também ficaria instável. É como se um castelo tivesse sido construído sobre a areia: se a fundação é instável, o que depende dela também é.
           
           ## Acoplamento e coesão
         `)}
-      />
-      <Image
-        src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/tight-coupling.webp"
-        width={400}
-        height={0}
-        alt="Representação visual de tight-coupling (DALL·E)"
-        className="max-w-full"
-        style={{ width: "100%", height: "auto", maxWidth: "400px" }}
-      />
-      <div className="text-xs text-white/80">
-        Representação visual de tight-coupling (DALL·E)
-      </div>
-      <div className="h-6"></div>
-      <ReactMarkdown
-        linkTarget={"_blank"}
-        children={prepareMarkdown(`
+        />
+        <Image
+          src="/blog/a-teia-invisivel-por-tras-dos-codigos/tight-coupling.webp"
+          width={400}
+          height={0}
+          alt="Representação visual de tight-coupling (DALL·E)"
+          className="max-w-full"
+          style={{ width: "100%", height: "auto", maxWidth: "400px" }}
+        />
+        <div className="text-xs text-white/80">
+          Representação visual de tight-coupling (DALL·E)
+        </div>
+        <div className="h-6"></div>
+        <ReactMarkdown
+          linkTarget={"_blank"}
+          children={prepareMarkdown(`
           Formalmente, existe uma métrica para o "peso" das dependências entre dois módulos: acoplamento (coupling). Acoplamento, em sua definição, é o "grau de interdependência entre módulos de software". Em outras palavras, é uma métrica abstrata que mede o quão atrelado um módulo está aos detalhes de outro módulo.
           
           Apesar do nome correto ser acoplamento, eu prefiro chamar de **atrelamento**. Acredito que traz uma nuance que faz mais sentido e facilita o entendimento.
@@ -171,22 +169,22 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
           
           ## A Lei de Deméter
         `)}
-      />
-      <Image
-        src="/images/blog/a-teia-invisivel-por-tras-dos-codigos/demeter.webp"
-        width={400}
-        height={0}
-        alt="Deméter, deusa da colheita e da agricultura (Wikimedia Commons)"
-        className="max-w-full"
-        style={{ width: "100%", height: "auto", maxWidth: "400px" }}
-      />
-      <div className="text-xs text-white/80">
-        Deméter, deusa da colheita e da agricultura (Wikimedia Commons)
-      </div>
-      <div className="h-6"></div>
-      <ReactMarkdown
-        linkTarget={"_blank"}
-        children={prepareMarkdown(`
+        />
+        <Image
+          src="/blog/a-teia-invisivel-por-tras-dos-codigos/demeter.webp"
+          width={400}
+          height={0}
+          alt="Deméter, deusa da colheita e da agricultura (Wikimedia Commons)"
+          className="max-w-full"
+          style={{ width: "100%", height: "auto", maxWidth: "400px" }}
+        />
+        <div className="text-xs text-white/80">
+          Deméter, deusa da colheita e da agricultura (Wikimedia Commons)
+        </div>
+        <div className="h-6"></div>
+        <ReactMarkdown
+          linkTarget={"_blank"}
+          children={prepareMarkdown(`
           A Lei de Deméter, também conhecida como o princípio do menor conhecimento, é uma heurística que foi proposta em 1987 por Ian Holland e Karl Lieberherr, professores de ciência da computação da Northeastern University localizada em Boston, Massachusetts. Ela pode ser útil para auxiliar o desenvolvedor no desacoplamento de módulos de software.
           
           Essa lei propõe que um método \`M\` de um objeto \`O\` só deve poder acessar membros dos seguintes possíveis objetos:
@@ -256,48 +254,49 @@ export default function ATeiaInvisivelPorTrasDosCodigos() {
 
           A teia de dependências desempenha um papel crucial no desenvolvimento de software, ditando muitas das decisões tomadas ao longo do processo. À medida que o software cresce em complexidade e tamanho, a importância de compreender e gerenciar essas dependências torna-se ainda mais evidente. Portanto, é fundamental compreender o seu funcionamento para garantir a construção de um software de alta qualidade.
         `)}
-      />
-
-      <div className="h-10"></div>
-
-      <div>Se você gostou deste artigo, compartilhe com seus colegas!</div>
-      <div>
-        Em caso de dúvidas ou sugestões, entre em contato comigo pelo e-mail
-        abaixo.
-      </div>
-
-      <div className="h-10"></div>
-
-      <div className="p-3 border border-white/30 bg-black/40 flex">
-        <Image
-          src="/images/icon.png"
-          alt="Foto de Gustavo Toyota"
-          className="rounded-full "
-          width={128}
-          height={128}
         />
 
-        <div className="flex-0 w-4"></div>
+        <div className="h-10"></div>
 
-        <div className="flex-1 flex flex-col">
-          <div className="text-white/80">
-            Sobre <b>Gustavo Toyota</b>
-          </div>
+        <div>Se você gostou deste artigo, compartilhe com seus colegas!</div>
+        <div>
+          Em caso de dúvidas ou sugestões, entre em contato comigo pelo e-mail
+          abaixo.
+        </div>
 
-          <div className="h-2"></div>
+        <div className="h-10"></div>
 
-          <div className="text-sm text-white/90 flex-1">
-            Desenvolvedor de software interessado em extrair o máximo de poder
-            da simplicidade, transformando códigos complexos em soluções
-            elegantes e eficientes.
-          </div>
+        <div className="p-3 border border-white/30 bg-black/40 flex">
+          <Image
+            src="/photo.png"
+            alt="Foto de Gustavo Toyota"
+            className="rounded-full "
+            width={128}
+            height={128}
+          />
 
-          <div className="h-2"></div>
+          <div className="flex-0 w-4"></div>
 
-          <div>
-            <a href="mailto:mail@gustavotoyota.dev" className="text-sm">
-              mail@gustavotoyota.dev
-            </a>
+          <div className="flex-1 flex flex-col">
+            <div className="text-white/80">
+              Sobre <b>Gustavo Toyota</b>
+            </div>
+
+            <div className="h-2"></div>
+
+            <div className="text-sm text-white/90 flex-1">
+              Desenvolvedor de software interessado em extrair o máximo de poder
+              da simplicidade, transformando códigos complexos em soluções
+              elegantes e eficientes.
+            </div>
+
+            <div className="h-2"></div>
+
+            <div>
+              <a href="mailto:mail@gustavotoyota.dev" className="text-sm">
+                mail@gustavotoyota.dev
+              </a>
+            </div>
           </div>
         </div>
       </div>

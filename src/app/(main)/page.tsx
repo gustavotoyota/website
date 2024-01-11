@@ -20,7 +20,7 @@ export default function Home() {
         children={prepareMarkdown(`
           # Bem-vindo(a)!
 
-          ![Bem-vindo(a)!](/images/welcome.png "Sorrindo com o prêmio que ganhei no bingo")
+          ![Bem-vindo(a)!](/welcome.png "Sorrindo com o prêmio que ganhei no bingo")
 
           Olá! Meu nome é Gustavo Toyota.
 

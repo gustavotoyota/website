@@ -31,7 +31,7 @@ export default function Tab(props: {
             <use xlinkHref={`/codicon.svg#${props.icon}`} />
           </svg>
         ) : (
-          <Image src="/images/icon.png" alt="icon" width={16} height={16} />
+          <Image src="/icon.png" alt="icon" width={16} height={16} />
         )}
       </div>
 

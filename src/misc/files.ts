@@ -13,8 +13,13 @@ export const mainFiles: FileInfo[] = [
 
 export const blogPosts: FileInfo[] = [
   {
+    id: "uma-simples-estrutura-de-dados-para-particionamento-espacial-de-grades",
+    name: "[11/01/2024] Uma simples estrutura de dados para particionamento espacial de grades",
+    path: "/blog/uma-simples-estrutura-de-dados-para-particionamento-espacial-de-grades",
+  },
+  {
     id: "a-teia-invisivel-por-tras-dos-codigos",
-    name: "A teia invisível por trás dos códigos [03/10/2023]",
+    name: "[03/10/2023] A teia invisível por trás dos códigos",
     path: "/blog/a-teia-invisivel-por-tras-dos-codigos",
   },
 ];
