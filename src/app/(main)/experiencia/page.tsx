@@ -22,39 +22,7 @@ export default function Experiencia() {
 
           ---
           
-          \`2021-2023\` - **Desenvolvimento de projetos pessoais** - \`25-27 anos\`
-        `)}
-      />
-
-      <ul>
-        <li>
-          Mais informações em: <Link href="/projetos">projetos.html</Link>
-        </li>
-      </ul>
-
-      <Gallery
-        images={[
-          {
-            src: "/experiencia/pausa/20210425_123058.jpg",
-            alt: "Família",
-          },
-          {
-            src: "/experiencia/pausa/20210810_181936.jpg",
-            alt: "Eu e a Lili",
-          },
-          {
-            src: "/experiencia/pausa/IMG_20220109_151915.jpg",
-            alt: "Lili",
-          },
-        ]}
-      />
-
-      <ReactMarkdown
-        linkTarget={"_blank"}
-        children={prepareMarkdown(`
-          &nbsp;
-
-          \`2020\` - [Cielo](https://www.cielo.com.br/) - **Analista de Operação Comercial** - \`24 anos\`
+          \`2020\` - [Cielo](https://www.cielo.com.br/) - **Desenvolvedor de Software** - \`24 anos\`
 
           - Desenvolvimento de ferramentas e sistemas internos para apoio aos gestores de taxas de clientes da Cielo.
           - Utilização de C#, VBA, SQL, Nuxt.js, Vue.js, Typescript, Javascript, Git, HTML e CSS.
@@ -65,43 +33,33 @@ export default function Experiencia() {
         images={[
           {
             src: "/experiencia/cielo/efetivado/69179151_2912053682154595_6234392905591554048_n.jpg",
-            alt: "Evento Cielo Xperts",
           },
           {
             src: "/experiencia/cielo/efetivado/70057899_2893862317309656_524479703717773312_n.jpg",
-            alt: "Evento Cielo Xperts",
           },
           {
             src: "/experiencia/cielo/efetivado/71323576_2543141045731560_6758552342187999232_n.jpg",
-            alt: "",
           },
           {
             src: "/experiencia/cielo/efetivado/black-friday.jpg",
-            alt: "Black Friday",
           },
           {
             src: "/experiencia/cielo/efetivado/82431514_2767329983312664_7332104924890660864_n.jpg",
-            alt: "Prêmio de reconhecimento",
           },
           {
             src: "/experiencia/cielo/efetivado/48390639_1995490190527570_8309467214616985600_n.jpg",
-            alt: "",
           },
           {
             src: "/experiencia/cielo/efetivado/55924232_2628410633852236_355297282616197120_n.jpg",
-            alt: "",
           },
           {
             src: "/experiencia/cielo/efetivado/57032266_2222064521222120_4861725893275418624_n.jpg",
-            alt: "Amigo secreto",
           },
           {
             src: "/experiencia/cielo/efetivado/57096965_2526673200688111_7267745063298400256_n.jpg",
-            alt: "Amigo secreto",
           },
           {
             src: "/experiencia/cielo/efetivado/57674247_2526673137354784_7068108828692185088_n.jpg",
-            alt: "Amigo secreto",
           },
         ]}
       />
@@ -122,7 +80,6 @@ export default function Experiencia() {
         images={[
           {
             src: "/experiencia/cielo/estagio/59996094_10217013363318004_1319563113250422784_n.jpg",
-            alt: "Aniversário da chefe",
           },
         ]}
       />
